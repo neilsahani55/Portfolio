@@ -423,8 +423,8 @@
       /* Section spacing & alternation */
       section { padding: var(--space-8) 0; }
       section.alt { background: var(--surface); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
-      #projects { position: relative; }
-      #projects.section-highlight::before {
+      #projects, #experience { position: relative; }
+      #projects.section-highlight::before, #experience.section-highlight::before {
         content: "";
         position: absolute;
         left: 0; right: 0; top: 0;
@@ -436,11 +436,11 @@
         opacity: 0.9;
         pointer-events: none;
       }
-      #projects.section-highlight .container {
+      #projects.section-highlight .container, #experience.section-highlight .container {
         box-shadow: 0 0 30px -10px rgba(247,147,26,0.25);
         transition: box-shadow 300ms ease;
       }
-      #projects.section-highlight::before { transform: scaleX(1); }
+      #projects.section-highlight::before, #experience.section-highlight::before { transform: scaleX(1); }
 
       /* Grid utilities - RESPONSIVE UPDATES */
       .grid { display: grid; gap: var(--space-5); }
@@ -1000,7 +1000,7 @@
 
       .footer-nav-links {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         gap: var(--space-4);
         font-size: var(--fs-sm);
@@ -1235,6 +1235,7 @@
           <a class="focus-ring" href="#hero">Home</a>
           <a class="focus-ring" href="#about">About</a>
           <a class="focus-ring" href="#skills">Skills</a>
+          <a class="focus-ring" href="#experience">Experience</a>
           <a class="focus-ring" href="#projects">Projects</a>
           <a class="focus-ring" href="#contact">Contact</a>
         </nav>
@@ -1323,7 +1324,7 @@
               </ul>
             </div>
             <div class="card">
-              <div class="card-t3tle font-heading">Virtual Job Simulations</div>
+              <div class="card-title font-heading">Virtual Job Simulations</div>
               <ul style="margin:0; padding-left: 18px;">
                 <li><strong>Wells Fargo — Software Engineering</strong> (June 2025) — Data modeling & backend tasks</li>
                 <li><strong>Tata — GenAI Powered Data Analytics</strong> (June 2025) — Delinquency prediction & collections</li>
@@ -1400,21 +1401,13 @@
         </div>
       </section>
 
-      <!-- Experience & Projects -->
-      <section id="projects" aria-labelledby="projects-title" class="alt">
+      <!-- Experience -->
+      <section id="experience" aria-labelledby="experience-title" class="alt">
         <div class="container">
-          <h2 id="projects-title" class="section-title font-heading">Experience & Projects</h2>
-
-          <div class="filters" role="tablist" aria-label="Project filters" style="margin-bottom: var(--space-4);">
-            <button class="btn btn-outline filter-btn focus-ring" role="tab" aria-pressed="true" data-filter="all">All</button>
-            <button class="btn btn-outline filter-btn focus-ring" role="tab" aria-pressed="false" data-filter="experience">Experience</button>
-            <button class="btn btn-outline filter-btn focus-ring" role="tab" aria-pressed="false" data-filter="academic">Academic</button>
-            <button class="btn btn-outline filter-btn focus-ring" role="tab" aria-pressed="false" data-filter="professional">Professional</button>
-          </div>
-
-          <div class="grid grid-3" id="project-grid">
-            <!-- Experience -->
-            <article class="card project-item" data-category="experience">
+          <h2 id="experience-title" class="section-title font-heading">Experience</h2>
+          
+          <div class="grid">
+      <article class="card" data-category="experience">
               <div class="card-title font-heading">Python Developer & AI Automation Engineer</div>
               <div class="card-subtitle">MCM BPO Pvt. Ltd. — Mumbai Metropolitan Region <br>June 2025 – Present </div>
               <ul style="margin-top: var(--space-3); padding-left: 18px;">
@@ -1428,7 +1421,22 @@
               </ul>
               <div class="font-mono" style="margin-top: var(--space-3);">🏆 Employee of the Month — 2 Times</div>
             </article>
+          </div>
+        </div>
+      </section>
 
+      <!-- Projects -->
+      <section id="projects" aria-labelledby="projects-title" class="alt">
+        <div class="container">
+          <h2 id="projects-title" class="section-title font-heading">Projects</h2>
+
+          <div class="filters" role="tablist" aria-label="Project filters" style="margin-bottom: var(--space-4);">
+            <button class="btn btn-outline filter-btn focus-ring" role="tab" aria-pressed="true" data-filter="all">All</button>
+            <button class="btn btn-outline filter-btn focus-ring" role="tab" aria-pressed="false" data-filter="academic">Academic</button>
+            <button class="btn btn-outline filter-btn focus-ring" role="tab" aria-pressed="false" data-filter="professional">Professional</button>
+          </div>
+
+          <div class="grid grid-3" id="project-grid">
             <!-- Professional / Industry Projects -->
             <article class="card project-item" data-category="professional">
               <div class="card-title font-heading">FlowGen — AI Platform</div>
@@ -1550,6 +1558,7 @@
                   <a href="#hero" class="footer-nav-link">Home</a>
                   <a href="#about" class="footer-nav-link">About</a>
                   <a href="#skills" class="footer-nav-link">Skills</a>
+                  <a href="#experience" class="footer-nav-link">Experience</a>
                   <a href="#projects" class="footer-nav-link">Projects</a>
                   <a href="#contact" class="footer-nav-link">Contact</a>
                 </nav>
@@ -1705,31 +1714,35 @@
       })();
 
       // ==========================================================================
-      // Projects section visual highlighting while in view
+      // Projects & Experience section visual highlighting while in view
       // ==========================================================================
       (() => {
         try {
-          const section = document.getElementById('projects');
-          if (!section) return;
-          const apply = (active) => {
+          const sections = [document.getElementById('projects'), document.getElementById('experience')].filter(Boolean);
+          if (!sections.length) return;
+          
+          const apply = (section, active) => {
             section.classList.toggle('section-highlight', !!active);
-            window.__navForceProjects = !!active;
           };
+
           const headerOffset = 72;
           if ('IntersectionObserver' in window) {
             const io = new IntersectionObserver((entries) => {
-              const e = entries.find(en => en.target === section);
-              const ratio = e ? e.intersectionRatio : 0;
-              apply(ratio > 0.25);
+              entries.forEach(e => {
+                const ratio = e.intersectionRatio;
+                apply(e.target, ratio > 0.25);
+              });
             }, { threshold: [0.1, 0.25, 0.5, 0.75], rootMargin: `-${headerOffset}px 0px -30% 0px` });
-            io.observe(section);
+            sections.forEach(s => io.observe(s));
           } else {
             let ticking = false;
             const check = () => {
-              const rect = section.getBoundingClientRect();
               const vh = window.innerHeight || document.documentElement.clientHeight;
-              const visible = rect.top < vh - headerOffset && rect.bottom > headerOffset + 20;
-              apply(visible);
+              sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const visible = rect.top < vh - headerOffset && rect.bottom > headerOffset + 20;
+                apply(section, visible);
+              });
             };
             const onScroll = () => {
               if (ticking) return;
@@ -1769,7 +1782,7 @@
           const buttons = Array.from(document.querySelectorAll('.filter-btn'));
           const items = Array.from(document.querySelectorAll('.project-item'));
           if (!buttons.length || !items.length) return;
-          const valid = new Set(['all', 'experience', 'academic', 'professional']);
+          const valid = new Set(['all', 'academic', 'professional']);
           const setPressed = (activeBtn) => {
             buttons.forEach(b => {
               const isActive = b === activeBtn;
