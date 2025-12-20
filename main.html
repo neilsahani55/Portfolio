@@ -421,26 +421,15 @@
       .muted { color: var(--muted); }
 
       /* Section spacing & alternation */
-      section { padding: var(--space-8) 0; }
-      section.alt { background: var(--surface); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+      section, .section-div { padding: var(--space-8) 0; }
+      section.alt, .section-div.alt { background: var(--surface); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+      
+      /* Rounded corners for specific sections as requested */
+      .rounded-content {
+        border-radius: var(--radius-lg);
+      }
+
       #projects, #experience { position: relative; }
-      #projects.section-highlight::before, #experience.section-highlight::before {
-        content: "";
-        position: absolute;
-        left: 0; right: 0; top: 0;
-        height: 4px;
-        background: linear-gradient(to right, var(--accent-deep), var(--accent));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 300ms ease, opacity 300ms ease;
-        opacity: 0.9;
-        pointer-events: none;
-      }
-      #projects.section-highlight .container, #experience.section-highlight .container {
-        box-shadow: 0 0 30px -10px rgba(247,147,26,0.25);
-        transition: box-shadow 300ms ease;
-      }
-      #projects.section-highlight::before, #experience.section-highlight::before { transform: scaleX(1); }
 
       /* Grid utilities - RESPONSIVE UPDATES */
       .grid { display: grid; gap: var(--space-5); }
@@ -1202,22 +1191,65 @@
        }
        
        @media (max-width: 480px) {
-         body {
-           padding: 0 10px;
-         }
-         header {
-           padding: 0 10px;
-           margin: 0 -10px;
-         }
-         .new-footer {
-           margin-left: -10px;
-           margin-right: -10px;
-           padding-left: 10px;
-           padding-right: 10px;
-         }
-       }
+        body {
+          padding: 0 10px;
+        }
+        header {
+          padding: 0 10px;
+          margin: 0 -10px;
+        }
+        .new-footer {
+          margin-left: -10px;
+          margin-right: -10px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
 
-     </style>
+      /* ==========================================================================
+         SECTION TITLES
+         Handles titles both inside sections and as direct children of main
+         ========================================================================== */
+      section > .section-title,
+      main > .section-title {
+        width: 100%;
+        max-width: var(--container);
+        margin: 0 auto var(--space-4); /* Center horizontally, bottom margin */
+        padding: 0 var(--space-4);     /* Match container padding */
+      }
+
+      /* Titles moved to main need top spacing */
+      main > .section-title,
+      .section-wrapper > .section-title {
+        margin-top: var(--space-8);
+      }
+
+      /* Reduce top padding of sections that follow a title */
+      main > .section-title + section,
+      main > .section-title + .section-div,
+      .section-wrapper > .section-title + section,
+      .section-wrapper > .section-title + .section-div,
+      .section-wrapper > .section-title + .container {
+        padding-top: var(--space-4);
+      }
+      
+      /* Wrapper for navigation targets to include title */
+      .section-wrapper,
+      #experience-title,
+      #projects-title {
+        scroll-margin-top: 80px;
+      }
+
+      /* Desktop padding adjustment */
+      @media (min-width: 1025px) {
+        section > .section-title,
+        main > .section-title {
+          padding-left: var(--space-5);
+          padding-right: var(--space-5);
+        }
+      }
+
+    </style>
    </head>
   <body class="font-body">
     <a href="#main" class="skip-link">Skip to content</a>
@@ -1300,9 +1332,9 @@
       </section>
 
       <!-- About -->
-      <section id="about" aria-labelledby="about-title" class="alt">
-        <div class="container">
-          <h2 id="about-title" class="section-title font-heading">About Me</h2>
+      <div id="about" class="section-wrapper">
+        <h2 id="about-title" class="section-title font-heading">About Me</h2>
+        <div class="container rounded-content">
           <div class="grid grid-3">
             <div class="card">
               <div class="card-title font-heading">Profile</div>
@@ -1353,12 +1385,13 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
 
       <!-- Skills -->
       <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section-title font-heading">Skills & Expertise</h2>
         <div class="container">
-          <h2 id="skills-title" class="section-title font-heading">Skills & Expertise</h2>
           <div class="grid grid-2">
             <div class="card">
               <div class="card-title font-heading">Programming & Backend</div>
@@ -1402,9 +1435,9 @@
       </section>
 
       <!-- Experience -->
-      <section id="experience" aria-labelledby="experience-title" class="alt">
+      <div id="experience" class="section-wrapper">
+      <h2 id="experience-title" class="section-title font-heading">Experience</h2>
         <div class="container">
-          <h2 id="experience-title" class="section-title font-heading">Experience</h2>
           
           <div class="grid">
       <article class="card" data-category="experience">
@@ -1423,12 +1456,13 @@
             </article>
           </div>
         </div>
-      </section>
+      </div>
+
 
       <!-- Projects -->
-      <section id="projects" aria-labelledby="projects-title" class="alt">
+      <div id="projects" class="section-wrapper">
+      <h2 id="projects-title" class="section-title font-heading">Projects</h2>
         <div class="container">
-          <h2 id="projects-title" class="section-title font-heading">Projects</h2>
 
           <div class="filters" role="tablist" aria-label="Project filters" style="margin-bottom: var(--space-4);">
             <button class="btn btn-outline filter-btn focus-ring" role="tab" aria-pressed="true" data-filter="all">All</button>
@@ -1485,12 +1519,12 @@
             </article>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- Contact -->
       <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="section-title font-heading">Contact</h2>
         <div class="container">
-          <h2 id="contact-title" class="section-title font-heading">Contact</h2>
           <div class="card contact-card">
             <div class="contact-grid">
               <div class="contact-info">
@@ -1627,16 +1661,33 @@
         const links = Array.from(document.querySelectorAll('a[href^="#"]'));
         links.forEach(link => {
           link.addEventListener('click', (e) => {
-            const id = link.getAttribute('href').slice(1);
+            let id = link.getAttribute('href').slice(1);
+            // Specific handling for Experience and Projects
+            const isSpecial = id === 'experience' || id === 'projects';
+            if (isSpecial) {
+              console.log(`Navigating to ${id}...`);
+              if (id === 'experience') id = 'experience-title';
+              if (id === 'projects') id = 'projects-title';
+            }
+
             const target = document.getElementById(id);
             if (target) {
               e.preventDefault();
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              setTimeout(() => {
-                // Move focus for accessibility after scroll
-                target.setAttribute('tabindex', '-1');
-                target.focus({ preventScroll: true });
-              }, 500);
+              try {
+                if (isSpecial) {
+                   history.pushState(null, null, '#' + link.getAttribute('href').slice(1));
+                }
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setTimeout(() => {
+                  target.setAttribute('tabindex', '-1');
+                  target.focus({ preventScroll: true });
+                }, 500);
+                if (isSpecial) console.log('Navigation successful');
+              } catch (err) {
+                if (isSpecial) console.error('Navigation failed', err);
+              }
+            } else {
+               if (isSpecial) console.error('Target not found: ' + id);
             }
           });
         });
@@ -1650,29 +1701,46 @@
           if (!nav) return;
           const items = Array.from(nav.querySelectorAll('a[href^="#"]'));
           const ids = items.map(a => a.getAttribute('href')?.slice(1)).filter(Boolean);
-          const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+          
+          // Map link IDs to section elements (prefer ID match, fallback to ID-title)
+          const sections = [];
+          const linkIdBySectionId = new Map();
+          ids.forEach(id => {
+             const el = document.getElementById(id) || document.getElementById(id + '-title');
+             if (el) {
+                 sections.push(el);
+                 linkIdBySectionId.set(el.id, id);
+             }
+          });
+
           if (!sections.length || !items.length) return;
           const linkById = new Map(ids.map(id => [id, nav.querySelector('a[href="#' + id + '"]')]));
-          const setActive = (id) => {
-            linkById.forEach((a, key) => { if (a) a.classList.toggle('active', key === id); });
+          
+          const setActive = (linkId) => {
+            linkById.forEach((a, key) => { if (a) a.classList.toggle('active', key === linkId); });
           };
+          
           const initialId = (location.hash || '').replace('#','');
-          let lastActive = sections.find(s => s.id === initialId)?.id || (sections[0]?.id || '');
+          let lastActive = sections.find(s => linkIdBySectionId.get(s.id) === initialId) ? initialId : (linkIdBySectionId.get(sections[0]?.id) || '');
           if (lastActive) setActive(lastActive);
-          const selectBest = (entries) => {
-            let best = null, bestRatio = 0;
-            entries.forEach(e => {
-              const ratio = e.intersectionRatio || 0;
-              if (ratio > bestRatio) { bestRatio = ratio; best = e.target.id; }
-            });
-            return best;
-          };
-          const headerOffset = 72;
+          
           const observer = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
-            const force = !!window.__navForceProjects;
-            const best = force ? 'projects' : selectBest(entries);
-            if (best && best !== lastActive) { lastActive = best; setActive(best); }
-          }, { threshold: [0.1, 0.25, 0.5, 0.75], rootMargin: `-${headerOffset}px 0px -50% 0px` }) : null;
+            if (window.__navForceProjects) {
+              if (lastActive !== 'projects') { lastActive = 'projects'; setActive('projects'); }
+              return;
+            }
+            // Find the entry that is intersecting the middle line
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                const linkId = linkIdBySectionId.get(e.target.id);
+                if (linkId) {
+                   lastActive = linkId; 
+                   setActive(linkId); 
+                }
+              }
+            });
+          }, { rootMargin: '-45% 0px -45% 0px' }) : null;
+          
           if (observer) { sections.forEach(sec => observer.observe(sec)); }
           else {
             let ticking = false;
@@ -1687,16 +1755,27 @@
                 const nearTop = y < 10;
                 const atBottom = Math.abs(bottom - document.documentElement.scrollHeight) < 2;
                 const force = !!window.__navForceProjects;
-                let best = force ? 'projects' : (nearTop ? sections[0]?.id : (atBottom ? sections[sections.length - 1]?.id : sections[0]?.id));
-                let bestDist = Infinity;
-                sections.forEach(sec => {
-                  const rect = sec.getBoundingClientRect();
-                  const top = rect.top + window.scrollY;
-                  const bottomSec = rect.bottom + window.scrollY;
-                  const center = (top + bottomSec) / 2;
-                  const dist = Math.abs(center - middle);
-                  if (dist < bestDist) { bestDist = dist; best = sec.id; }
-                });
+                
+                let best = null;
+                if (force) best = 'projects';
+                else if (nearTop) best = linkIdBySectionId.get(sections[0]?.id);
+                else if (atBottom) best = linkIdBySectionId.get(sections[sections.length - 1]?.id);
+                
+                if (!best) {
+                    let bestDist = Infinity;
+                    sections.forEach(sec => {
+                      const rect = sec.getBoundingClientRect();
+                      const top = rect.top + window.scrollY;
+                      const bottomSec = rect.bottom + window.scrollY;
+                      const center = (top + bottomSec) / 2;
+                      const dist = Math.abs(center - middle);
+                      if (dist < bestDist) { 
+                          bestDist = dist; 
+                          best = linkIdBySectionId.get(sec.id); 
+                      }
+                    });
+                }
+                
                 if (best && best !== lastActive) { lastActive = best; setActive(best); }
                 ticking = false;
               });
@@ -1714,47 +1793,8 @@
       })();
 
       // ==========================================================================
-      // Projects & Experience section visual highlighting while in view
+      // Projects & Experience section visual highlighting - REMOVED
       // ==========================================================================
-      (() => {
-        try {
-          const sections = [document.getElementById('projects'), document.getElementById('experience')].filter(Boolean);
-          if (!sections.length) return;
-          
-          const apply = (section, active) => {
-            section.classList.toggle('section-highlight', !!active);
-          };
-
-          const headerOffset = 72;
-          if ('IntersectionObserver' in window) {
-            const io = new IntersectionObserver((entries) => {
-              entries.forEach(e => {
-                const ratio = e.intersectionRatio;
-                apply(e.target, ratio > 0.25);
-              });
-            }, { threshold: [0.1, 0.25, 0.5, 0.75], rootMargin: `-${headerOffset}px 0px -30% 0px` });
-            sections.forEach(s => io.observe(s));
-          } else {
-            let ticking = false;
-            const check = () => {
-              const vh = window.innerHeight || document.documentElement.clientHeight;
-              sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                const visible = rect.top < vh - headerOffset && rect.bottom > headerOffset + 20;
-                apply(section, visible);
-              });
-            };
-            const onScroll = () => {
-              if (ticking) return;
-              ticking = true;
-              requestAnimationFrame(() => { check(); ticking = false; });
-            };
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', check);
-            check();
-          }
-        } catch {}
-      })();
 
       // ==========================================================================
       // Skills bar animation using IntersectionObserver
