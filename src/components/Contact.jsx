@@ -1,44 +1,42 @@
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 import { MapPin, Phone, Mail, Github, Linkedin, Instagram, Send } from 'lucide-react'
 import { profile } from '../data/portfolio.js'
-
-const EMAILJS_CONFIG = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-}
 
 export default function Contact() {
   const [status, setStatus] = useState('idle') // idle | sending | success | error
   const [errorMessage, setErrorMessage] = useState('')
-  const isEmailConfigured = Object.values(EMAILJS_CONFIG).every(Boolean)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const form = e.currentTarget
-
-    if (!isEmailConfigured) {
-      setStatus('error')
-      setErrorMessage('The contact form is not configured yet. Please email me directly for now.')
-      return
-    }
+    const formData = new FormData(form)
+    const payload = Object.fromEntries(formData.entries())
 
     setStatus('sending')
     setErrorMessage('')
-    emailjs
-      .sendForm(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, form, {
-        publicKey: EMAILJS_CONFIG.publicKey,
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
       })
-      .then(() => {
-        setStatus('success')
-        setErrorMessage('')
-        form.reset()
-      })
-      .catch(() => {
-        setStatus('error')
-        setErrorMessage('Something went wrong. Please try again or email me directly.')
-      })
+
+      const result = await response.json().catch(() => ({}))
+
+      if (!response.ok) {
+        throw new Error(result?.error || 'Something went wrong. Please try again or email me directly.')
+      }
+
+      setStatus('success')
+      setErrorMessage('')
+      form.reset()
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(error.message || 'Something went wrong. Please try again or email me directly.')
+    }
   }
 
   return (
@@ -119,9 +117,9 @@ export default function Contact() {
             <button
               type="submit"
               className="btn btn--primary contact__send"
-              disabled={status === 'sending' || !isEmailConfigured}
+              disabled={status === 'sending'}
             >
-              {status === 'sending' ? 'Sending…' : !isEmailConfigured ? 'Form Setup Pending' : (
+              {status === 'sending' ? 'Sending…' : (
                 <>
                   Send Message <Send size={16} />
                 </>
