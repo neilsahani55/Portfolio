@@ -3,33 +3,42 @@ import emailjs from '@emailjs/browser'
 import { MapPin, Phone, Mail, Github, Linkedin, Instagram, Send } from 'lucide-react'
 import { profile } from '../data/portfolio.js'
 
-// ── EmailJS (SMTP) config ──────────────────────────────────────────────────
-// 1. Create a free account at https://www.emailjs.com
-// 2. Add an Email Service → choose Gmail/Outlook or "Custom SMTP" and enter
-//    your SMTP host / port / user / password.
-// 3. Create an Email Template using the variables: {{name}} {{email}}
-//    {{phone}} {{message}}  (these match the form field names below).
-// 4. Paste your three IDs here:
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
+const EMAILJS_CONFIG = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+}
 
 export default function Contact() {
   const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [errorMessage, setErrorMessage] = useState('')
+  const isEmailConfigured = Object.values(EMAILJS_CONFIG).every(Boolean)
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.currentTarget
+
+    if (!isEmailConfigured) {
+      setStatus('error')
+      setErrorMessage('The contact form is not configured yet. Please email me directly for now.')
+      return
+    }
+
     setStatus('sending')
+    setErrorMessage('')
     emailjs
-      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form, {
-        publicKey: EMAILJS_PUBLIC_KEY,
+      .sendForm(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, form, {
+        publicKey: EMAILJS_CONFIG.publicKey,
       })
       .then(() => {
         setStatus('success')
+        setErrorMessage('')
         form.reset()
       })
-      .catch(() => setStatus('error'))
+      .catch(() => {
+        setStatus('error')
+        setErrorMessage('Something went wrong. Please try again or email me directly.')
+      })
   }
 
   return (
@@ -110,9 +119,9 @@ export default function Contact() {
             <button
               type="submit"
               className="btn btn--primary contact__send"
-              disabled={status === 'sending'}
+              disabled={status === 'sending' || !isEmailConfigured}
             >
-              {status === 'sending' ? 'Sending…' : (
+              {status === 'sending' ? 'Sending…' : !isEmailConfigured ? 'Form Setup Pending' : (
                 <>
                   Send Message <Send size={16} />
                 </>
@@ -126,7 +135,7 @@ export default function Contact() {
             )}
             {status === 'error' && (
               <p className="contact__note contact__note--err">
-                ⚠️ Something went wrong. Please try again or email me directly.
+                {errorMessage}
               </p>
             )}
           </form>
