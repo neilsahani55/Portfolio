@@ -5,6 +5,12 @@ import { profile } from '../data/portfolio.js'
 export default function Contact() {
   const [status, setStatus] = useState('idle') // idle | sending | success | error
   const [errorMessage, setErrorMessage] = useState('')
+  const isSuccess = status === 'success'
+
+  const handleSendAnother = () => {
+    setStatus('idle')
+    setErrorMessage('')
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -84,59 +90,74 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className="contact__form" onSubmit={handleSubmit}>
-            <h3 className="contact__form-title">Get In Touch</h3>
-
-            <div className="contact__field">
-              <label htmlFor="cf-name">Name</label>
-              <input id="cf-name" name="name" type="text" required placeholder="Your name" />
-            </div>
-
-            <div className="contact__row">
-              <div className="contact__field">
-                <label htmlFor="cf-email">Email</label>
-                <input id="cf-email" name="email" type="email" required placeholder="you@example.com" />
+          <div className="contact__form">
+            {isSuccess ? (
+              <div className="contact__success" role="status" aria-live="polite">
+                <span className="contact__success-badge">Message Sent</span>
+                <h3 className="contact__form-title">Thank you for reaching out.</h3>
+                <p className="contact__success-text">
+                  Your message is in my inbox now. I appreciate you taking the time
+                  to connect, and I&apos;ll get back to you as soon as I can.
+                </p>
+                <button
+                  type="button"
+                  className="btn btn--secondary contact__send-another"
+                  onClick={handleSendAnother}
+                >
+                  Send Another Message
+                </button>
               </div>
-              <div className="contact__field">
-                <label htmlFor="cf-phone">Phone Number</label>
-                <input id="cf-phone" name="phone" type="tel" required placeholder="+91 98765 43210" />
-              </div>
-            </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <h3 className="contact__form-title">Get In Touch</h3>
 
-            <div className="contact__field">
-              <label htmlFor="cf-message">Message</label>
-              <textarea
-                id="cf-message"
-                name="message"
-                rows="4"
-                required
-                placeholder="Tell me about your project or idea..."
-              />
-            </div>
+                <div className="contact__field">
+                  <label htmlFor="cf-name">Name</label>
+                  <input id="cf-name" name="name" type="text" required placeholder="Your name" />
+                </div>
 
-            <button
-              type="submit"
-              className="btn btn--primary contact__send"
-              disabled={status === 'sending'}
-            >
-              {status === 'sending' ? 'Sending…' : (
-                <>
-                  Send Message <Send size={16} />
-                </>
-              )}
-            </button>
+                <div className="contact__row">
+                  <div className="contact__field">
+                    <label htmlFor="cf-email">Email</label>
+                    <input id="cf-email" name="email" type="email" required placeholder="you@example.com" />
+                  </div>
+                  <div className="contact__field">
+                    <label htmlFor="cf-phone">Phone Number</label>
+                    <input id="cf-phone" name="phone" type="tel" required placeholder="+91 98765 43210" />
+                  </div>
+                </div>
 
-            {status === 'success' && (
-              <p className="contact__note contact__note--ok">
-                ✅ Thanks! Your message has been sent — I'll get back to you soon.
-              </p>
+                <div className="contact__field">
+                  <label htmlFor="cf-message">Message</label>
+                  <textarea
+                    id="cf-message"
+                    name="message"
+                    rows="4"
+                    required
+                    placeholder="Tell me about your project or idea..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="btn btn--primary contact__send"
+                  disabled={status === 'sending'}
+                >
+                  {status === 'sending' ? 'Sending…' : (
+                    <>
+                      Send Message <Send size={16} />
+                    </>
+                  )}
+                </button>
+
+                {status === 'error' && (
+                  <p className="contact__note contact__note--err">
+                    {errorMessage}
+                  </p>
+                )}
+              </form>
             )}
-            {status === 'error' && (
-              <p className="contact__note contact__note--err">
-                {errorMessage}
-              </p>
-            )}
-          </form>
+          </div>
         </div>
       </div>
     </section>
