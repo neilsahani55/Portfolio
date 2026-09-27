@@ -6,7 +6,7 @@ export const profile = {
   tagline: 'Welcome to my universe',
   intro:
     'Building intelligent systems, AI products and automation workflows that create real impact.',
-  location: 'Bhayandar (East), Thane – 401105',
+  location: 'MiraRoad (East), Thane – 401107',
   phone: '+91 83569 98852',
   email: 'neilsahani55@gmail.com',
   links: {
@@ -258,7 +258,7 @@ export const experience = [
   {
     role: 'Full-Stack, AI & Automation Engineer',
     company: 'MCM BPO Pvt. Ltd. — Mumbai Metropolitan Region',
-    period: 'June 2025 – Present',
+    period: 'July 2025 – Present',
     points: [
       '🚀 Automated critical business workflows resulting in 30% improvement in operational efficiency',
       '⚡ Designed and deployed AI-powered solutions for content generation, analysis, and workflow optimization',
@@ -299,6 +299,7 @@ export const projects = [
     tags: ['Python', 'Flask', 'Gemini API'],
     icon: 'sparkles',
     tone: 'amber',
+    color: '#ea580c',
     badge: 'Featured',
     image: '/projects/promptstudio.jpg',
     demo: 'https://promptstudios.vercel.app',
@@ -322,6 +323,8 @@ export const projects = [
     tags: ['Python', 'n8n', 'OpenAI'],
     icon: 'workflow',
     tone: 'slate',
+    color: '#1e40af',
+    badge: 'AI',
     image: '/projects/flowgen.jpg',
     code: 'https://github.com/neilsahani55/Flowgen',
   },
@@ -331,6 +334,8 @@ export const projects = [
     tags: ['Python', 'n8n', 'Selenium', 'APIs'],
     icon: 'send',
     tone: 'sky',
+    color: '#38bdf8',
+    badge: 'Automation',
     image: '/projects/autosocialflow.jpg',
   },
   {
@@ -351,6 +356,8 @@ export const projects = [
     tags: ['Python', 'FastAPI', 'PostgreSQL', 'LLM'],
     icon: 'shield',
     tone: 'rose',
+    color: '#e11d48',
+    badge: 'FinTech',
     image: '/projects/saleshub.jpg',
   },
   {
@@ -359,6 +366,7 @@ export const projects = [
     tags: ['C++', 'Arduino', 'Ultrasonic', 'Buzzer'],
     icon: 'walk',
     tone: 'dark',
+    color: '#06b6d4',
     badge: 'IoT',
     image: '/projects/smartstick.jpg',
   },
@@ -368,6 +376,8 @@ export const projects = [
     tags: ['Java', 'Android', 'TMDB API', 'XML'],
     icon: 'film',
     tone: 'indigo',
+    color: '#8b5cf6',
+    badge: 'Android',
     image: '/projects/movieapp.jpg',
   },
   {
@@ -376,6 +386,8 @@ export const projects = [
     tags: ['Personal', 'Professional', 'Fun'],
     icon: 'more',
     tone: 'dark',
+    color: '#ff4d1c',
+    badge: 'Explore',
     code: 'https://github.com/neilsahani55',
   },
 ]
