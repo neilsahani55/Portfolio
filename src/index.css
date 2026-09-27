@@ -1401,19 +1401,6 @@ img {
   font-size: 11px;
   color: var(--ink-soft);
 }
-.bshelf__passed {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 12px;
-  padding: 4px 11px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(21, 128, 61, 0.25);
-  background: #e9f6ec;
-  color: #15803d;
-  font-size: 11px;
-  font-weight: 600;
-}
 
 /* ==========================================================================
    PROJECTS
@@ -2462,7 +2449,6 @@ img {
   .bshelf__medal { width: 92px; height: 92px; padding: 10px; }
   .bshelf__title { font-size: 12.5px; }
   .bshelf__issuer { font-size: 10px; }
-  .bshelf__passed { font-size: 10px; padding: 3px 9px; }
 
   /* 2. About paragraphs justified */
   .about__story { text-align: justify; }

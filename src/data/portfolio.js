@@ -84,29 +84,14 @@ export const about = {
 }
 
 // Merged "Virtual Job Simulations" + "Certifications" — shown in a carousel.
+// Ordered by market value: AWS first, then job simulations, then platform courses.
+// Microsoft Learn badge/trophy certificates live on the badge shelf instead (see `badges`).
 export const certifications = [
-  { title: 'Software Engineering Job Simulation', issuer: 'Wells Fargo · Forage', file: '/certificates/WellsFargoCertificate.jpg' },
-  { title: 'GenAI Powered Data Analytics', issuer: 'Tata · Forage', file: '/certificates/TataGenAICertificate.jpg' },
-  { title: 'Data Visualization', issuer: 'Tata · Forage', file: '/certificates/TataDataVisualisationCertificate.jpg' },
-  { title: 'Data Analytics Job Simulation', issuer: 'Deloitte · Forage', file: '/certificates/DeloitteCertificate.jpg' },
-  { title: 'Learning Microsoft Power BI', issuer: 'Infosys Springboard', file: '/certificates/PowerBI.jpg' },
-  { title: 'Power BI Skill Course', issuer: 'Skill Course', file: '/certificates/PowerBISkillCourse.jpg' },
-  { title: 'Microsoft Excel 2016', issuer: 'Infosys Springboard', file: '/certificates/ExcelCertificate.jpg' },
-  { title: 'UX & UI — Color Theory', issuer: 'Infosys Springboard', file: '/certificates/UiUxColorTheory.jpg' },
-  { title: 'Introduction to UI / UX', issuer: 'Infosys Springboard', file: '/certificates/IntroductionToUI_UX.jpg' },
-  { title: 'Generative AI', issuer: 'OutSkill', file: '/certificates/OutSkillGenAI.jpg' },
-  // Microsoft Learn
-  { title: 'Get started with Microsoft 365 Copilot', issuer: 'Microsoft Learn', file: '/certificates/GetStartedWithMicrosoft365Copilot.jpg' },
-  { title: 'Introduction to Microsoft 365 Copilot', issuer: 'Microsoft Learn', file: '/certificates/IntroductionToMicrosoft365Copilot.jpg' },
-  { title: 'Create and draft with Microsoft 365 Copilot', issuer: 'Microsoft Learn', file: '/certificates/CreateAndDraftWithMicrosoft365Copilot.jpg' },
-  { title: 'Explore the possibilities with Microsoft 365 Copilot', issuer: 'Microsoft Learn', file: '/certificates/ExploreThePossibilitiesWithMicrosoft365Copilot.jpg' },
-  { title: 'Optimize and extend Microsoft 365 Copilot', issuer: 'Microsoft Learn', file: '/certificates/OptimizeAndExtendMicrosoft365Copilot.jpg' },
-  { title: 'Introduction to AI Skills for nonprofits', issuer: 'Microsoft Learn', file: '/certificates/IntroductionToAISkillsForNonprofits.jpg' },
   // AWS Skill Builder
   { title: 'AWS Cloud Practitioner Essentials', issuer: 'AWS Skill Builder', file: '/certificates/AWSCloudPractitionerEssentials.jpg' },
-  { title: 'Foundations of Prompt Engineering', issuer: 'AWS Skill Builder', file: '/certificates/FoundationsOfPromptEngineering.jpg' },
   { title: 'Compute Knowledge Badge Assessment', issuer: 'AWS Skill Builder', file: '/certificates/ComputeKnowledgeBadgeAssessment.jpg' },
   { title: 'Compute Knowledge Badge Readiness Path', issuer: 'AWS Skill Builder', file: '/certificates/ComputeKnowledgeBadgeReadinessPath.jpg' },
+  { title: 'Foundations of Prompt Engineering', issuer: 'AWS Skill Builder', file: '/certificates/FoundationsOfPromptEngineering.jpg' },
   { title: 'Amazon EC2 Basics', issuer: 'AWS Skill Builder', file: '/certificates/AmazonEC2Basics.jpg' },
   { title: 'Build with Amazon EC2', issuer: 'AWS Skill Builder', file: '/certificates/BuildWithAmazonEC2.jpg' },
   { title: 'Innovations in Amazon EC2', issuer: 'AWS Skill Builder', file: '/certificates/InnovationsInAmazonEC2.jpg' },
@@ -124,26 +109,31 @@ export const certifications = [
   { title: 'AWS Foundations: Getting Started with the AWS Cloud Essentials', issuer: 'AWS Skill Builder', file: '/certificates/AWSFoundationsGettingStartedWithTheAWSCloudEssentials.jpg' },
   { title: 'Getting Started with Cloud Acquisition', issuer: 'AWS Skill Builder', file: '/certificates/GettingStartedWithCloudAcquisition.jpg' },
   { title: 'Job Roles in the Cloud', issuer: 'AWS Skill Builder', file: '/certificates/JobRolesInTheCloud.jpg' },
+  // Virtual job simulations (Forage)
+  { title: 'Software Engineering Job Simulation', issuer: 'Wells Fargo · Forage', file: '/certificates/WellsFargoCertificate.jpg' },
+  { title: 'Data Analytics Job Simulation', issuer: 'Deloitte · Forage', file: '/certificates/DeloitteCertificate.jpg' },
+  { title: 'GenAI Powered Data Analytics', issuer: 'Tata · Forage', file: '/certificates/TataGenAICertificate.jpg' },
+  { title: 'Data Visualization', issuer: 'Tata · Forage', file: '/certificates/TataDataVisualisationCertificate.jpg' },
+  // Platform courses
+  { title: 'Generative AI', issuer: 'OutSkill', file: '/certificates/OutSkillGenAI.jpg' },
+  { title: 'Learning Microsoft Power BI', issuer: 'Infosys Springboard', file: '/certificates/PowerBI.jpg' },
+  { title: 'Power BI Skill Course', issuer: 'Skill Course', file: '/certificates/PowerBISkillCourse.jpg' },
+  { title: 'Microsoft Excel 2016', issuer: 'Infosys Springboard', file: '/certificates/ExcelCertificate.jpg' },
+  { title: 'UX & UI — Color Theory', issuer: 'Infosys Springboard', file: '/certificates/UiUxColorTheory.jpg' },
+  { title: 'Introduction to UI / UX', issuer: 'Infosys Springboard', file: '/certificates/IntroductionToUI_UX.jpg' },
 ]
 
 // Earned badges & trophies — shown on the badge shelf below certifications.
-// type: 'badge' (module) | 'trophy' (learning path). Clicking opens the matching certificate.
+// type: 'badge' (module) | 'trophy' (learning path). Clicking opens `file`:
+// the full badge image for AWS, the matching certificate for Microsoft Learn.
 export const badges = [
   {
-    title: 'Get started with Microsoft 365 Copilot',
-    type: 'trophy',
-    issuer: 'Microsoft Learn',
-    date: 'Jun 2026',
-    image: '/badges/GetStartedWithMicrosoft365Copilot.png',
-    file: '/certificates/GetStartedWithMicrosoft365Copilot.jpg',
-  },
-  {
-    title: 'Introduction to AI Skills for nonprofits',
-    type: 'trophy',
-    issuer: 'Microsoft Learn',
-    date: 'Jun 2026',
-    image: '/badges/IntroductionToAISkillsForNonprofits.png',
-    file: '/certificates/IntroductionToAISkillsForNonprofits.jpg',
+    title: 'AWS Knowledge: Compute',
+    type: 'badge',
+    issuer: 'AWS Training & Certification',
+    date: 'Jul 2026',
+    image: '/badges/AWSComputeKnowledgeBadge.png',
+    file: '/badges/AWSComputeKnowledgeBadge.png',
   },
   {
     title: 'Introduction to Microsoft 365 Copilot',
@@ -178,12 +168,20 @@ export const badges = [
     file: '/certificates/OptimizeAndExtendMicrosoft365Copilot.jpg',
   },
   {
-    title: 'AWS Knowledge: Compute',
-    type: 'badge',
-    issuer: 'AWS Training & Certification',
-    date: 'Jul 2026',
-    image: '/badges/AWSComputeKnowledgeBadge.png',
-    file: '/certificates/ComputeKnowledgeBadgeAssessment.jpg',
+    title: 'Get started with Microsoft 365 Copilot',
+    type: 'trophy',
+    issuer: 'Microsoft Learn',
+    date: 'Jun 2026',
+    image: '/badges/GetStartedWithMicrosoft365Copilot.png',
+    file: '/certificates/GetStartedWithMicrosoft365Copilot.jpg',
+  },
+  {
+    title: 'Introduction to AI Skills for nonprofits',
+    type: 'trophy',
+    issuer: 'Microsoft Learn',
+    date: 'Jun 2026',
+    image: '/badges/IntroductionToAISkillsForNonprofits.png',
+    file: '/certificates/IntroductionToAISkillsForNonprofits.jpg',
   },
 ]
 

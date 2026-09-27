@@ -1,4 +1,4 @@
-import { Award, Trophy, BadgeCheck, ExternalLink } from 'lucide-react'
+import { Award, Trophy, ExternalLink } from 'lucide-react'
 import { badges } from '../data/portfolio.js'
 
 export default function BadgeShelf() {
@@ -41,10 +41,6 @@ export default function BadgeShelf() {
             <div className="bshelf__issuer">
               {b.issuer} · {b.date}
             </div>
-            <span className="bshelf__passed">
-              <BadgeCheck size={13} />
-              {b.type === 'trophy' ? 'All assessments passed' : 'Assessment passed'}
-            </span>
           </a>
         ))}
       </div>
