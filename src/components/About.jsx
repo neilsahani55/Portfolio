@@ -4,6 +4,7 @@ import { about } from '../data/portfolio.js'
 import CertCarousel from './CertCarousel.jsx'
 import CompetencyOrbit from './CompetencyOrbit.jsx'
 import CertModal from './CertModal.jsx'
+import BadgeShelf from './BadgeShelf.jsx'
 
 export default function About() {
   const [certOpen, setCertOpen] = useState(false)
@@ -74,6 +75,9 @@ export default function About() {
             <CertCarousel />
           </div>
         </div>
+
+        {/* Badges & trophies shelf */}
+        <BadgeShelf />
 
         <div className="about__core">
           <div className="core__left">

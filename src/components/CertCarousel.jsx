@@ -72,15 +72,10 @@ export default function CertCarousel() {
         <button className="cert__nav" onClick={() => go(-1)} aria-label="Previous certificate">
           <ChevronLeft size={22} />
         </button>
-        <div className="cert__dots">
-          {items.map((_, i) => (
-            <button
-              key={i}
-              className={`cert__dot${i === index ? ' is-active' : ''}`}
-              onClick={() => setIndex(i)}
-              aria-label={`Go to certificate ${i + 1}`}
-            />
-          ))}
+        <div className="cert__count" aria-live="polite">
+          <span className="cert__count-cur">{String(index + 1).padStart(2, '0')}</span>
+          <span className="cert__count-sep">/</span>
+          {String(n).padStart(2, '0')}
         </div>
         <button className="cert__nav" onClick={() => go(1)} aria-label="Next certificate">
           <ChevronRight size={22} />

@@ -1216,25 +1216,203 @@ img {
   color: #fff;
   border-color: var(--accent);
 }
-.cert__dots {
+.cert__count {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+  min-width: 76px;
+  text-align: center;
+}
+.cert__count-cur {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 16px;
+}
+.cert__count-sep {
+  margin: 0 6px;
+  color: var(--accent);
+}
+
+/* Badges & trophies shelf ------------------------------------------------- */
+.bshelf {
+  margin-top: 44px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+}
+.bshelf__head {
   display: flex;
-  gap: 8px;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 26px;
 }
-.cert__dot {
-  width: 9px;
-  height: 9px;
+.bshelf__head .about__subtitle {
+  margin-bottom: 0;
+}
+.bshelf__count {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  white-space: nowrap;
+}
+.bshelf__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+.bshelf__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 14px 18px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #fdfcf8 0%, #fff 55%);
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.bshelf__card::before {
+  content: '';
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: none;
-  padding: 0;
-  background: rgba(14, 14, 16, 0.18);
-  cursor: pointer;
-  transition: all 0.25s ease;
+  background: radial-gradient(circle, var(--bshelf-glow, rgba(37, 99, 235, 0.14)) 0%, transparent 68%);
+  pointer-events: none;
 }
-.cert__dot.is-active {
-  background: var(--accent);
-  width: 26px;
-  border-radius: 6px;
+.bshelf__card--trophy {
+  --bshelf-glow: rgba(247, 147, 26, 0.18);
+  --bshelf-ring-a: #f7b733;
+  --bshelf-ring-b: #e8541f;
+  --bshelf-type: #a16207;
+  --bshelf-type-bg: #fdf3d0;
+}
+.bshelf__card--badge {
+  --bshelf-ring-a: #2563eb;
+  --bshelf-ring-b: #7c3aed;
+  --bshelf-type: var(--t-blue);
+  --bshelf-type-bg: var(--t-blue-bg);
+}
+.bshelf__card:hover {
+  transform: translateY(-5px);
+  border-color: var(--bshelf-ring-a);
+  box-shadow: var(--shadow-md);
+}
+.bshelf__open {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  background: rgba(14, 14, 16, 0.55);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+.bshelf__card:hover .bshelf__open {
+  opacity: 1;
+}
+.bshelf__medal {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  padding: 12px;
+  border: 2.5px solid transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    conic-gradient(
+        from 210deg,
+        var(--bshelf-ring-a),
+        var(--bshelf-ring-b),
+        var(--bshelf-ring-a)
+      )
+      border-box;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.bshelf__medal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.bshelf__shine {
+  position: absolute;
+  top: -20%;
+  left: -60%;
+  width: 45%;
+  height: 140%;
+  transform: skewX(-22deg) translateX(0);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+  pointer-events: none;
+}
+.bshelf__card:hover .bshelf__shine {
+  animation: bshelfshine 0.8s ease forwards;
+}
+@keyframes bshelfshine {
+  to { transform: skewX(-22deg) translateX(340%); }
+}
+.bshelf__type {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  background: var(--bshelf-type-bg);
+  color: var(--bshelf-type);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.bshelf__title {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 13.5px;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bshelf__issuer {
+  margin-top: 5px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+.bshelf__passed {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(21, 128, 61, 0.25);
+  background: #e9f6ec;
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -2275,6 +2453,16 @@ img {
   }
   .cert__stage { height: 250px; }
   .cert__slide { width: min(92%, 440px); }
+
+  /* Badge shelf — tighter cards, two per row */
+  .bshelf { margin-top: 28px; padding: 24px; }
+  .bshelf__head { flex-wrap: wrap; margin-bottom: 20px; }
+  .bshelf__grid { grid-template-columns: repeat(auto-fit, minmax(146px, 1fr)); gap: 12px; }
+  .bshelf__card { padding: 18px 10px 14px; }
+  .bshelf__medal { width: 92px; height: 92px; padding: 10px; }
+  .bshelf__title { font-size: 12.5px; }
+  .bshelf__issuer { font-size: 10px; }
+  .bshelf__passed { font-size: 10px; padding: 3px 9px; }
 
   /* 2. About paragraphs justified */
   .about__story { text-align: justify; }
