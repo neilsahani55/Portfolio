@@ -10,6 +10,7 @@ import {
   Clapperboard,
   FileText,
   SatelliteDish,
+  FolderGit2,
   Globe,
   ArrowUpRight,
   Github,
@@ -29,6 +30,7 @@ const ICONS = {
   film: Clapperboard,
   filetext: FileText,
   dish: SatelliteDish,
+  more: FolderGit2,
 }
 
 // Badge background matches the project's `tone`.
