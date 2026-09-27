@@ -8,6 +8,8 @@ import {
   ShieldCheck,
   Accessibility,
   Clapperboard,
+  FileText,
+  SatelliteDish,
   Globe,
   ArrowUpRight,
   Github,
@@ -25,6 +27,8 @@ const ICONS = {
   shield: ShieldCheck,
   walk: Accessibility,
   film: Clapperboard,
+  filetext: FileText,
+  dish: SatelliteDish,
 }
 
 // Badge background matches the project's `tone`.
