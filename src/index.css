@@ -2469,11 +2469,9 @@ img {
   .bshelf__grid--scroll { display: grid; overflow: visible; padding-bottom: 0; }
   .bshelf__grid--scroll .bshelf__card { flex: initial; }
   .bshelf__scroller .projects__arrow { display: none; }
-  /* odd number of badges: center the top one across both columns */
+  /* odd number of badges: the top one spans the full row */
   .bshelf__grid .bshelf__card:first-child:nth-last-child(odd) {
     grid-column: 1 / -1;
-    justify-self: center;
-    width: calc(50% - 6px);
   }
   .bshelf__card { padding: 18px 10px 14px; }
   .bshelf__medal { width: 92px; height: 92px; padding: 10px; }
