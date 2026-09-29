@@ -1268,6 +1268,14 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 16px;
 }
+
+/* Featured / top badge — spans the full row */
+.bshelf__card--featured {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+
 /* 8+ badges: horizontal scroller with arrows (scrollbar hidden) */
 .bshelf__scroller {
   position: relative;
