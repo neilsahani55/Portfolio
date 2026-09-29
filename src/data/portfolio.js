@@ -37,9 +37,9 @@ export const about = {
   eyebrow: 'Who I Am',
   heading: 'I Build Intelligent Systems That Solve Real Problems.',
   paragraphs: [
-    "I'm Neel Sahani, an AI Automation Engineer focused on building intelligent products, workflow automation systems, and scalable backend solutions.",
-    'My work combines Python, AI, automation, and modern web technologies to transform manual processes into efficient digital systems.',
-    'From AI-powered news intelligence platforms like NewsSphere to automation workflows and intelligent applications, I enjoy turning ideas into products that create measurable impact.',
+    "I'm Neel Sahani, a Full-Stack, AI & Automation Engineer who turns slow, manual processes into intelligent products — from AI-powered platforms to end-to-end workflow automation.",
+    'I work across the entire stack: Python and Flask/FastAPI on the backend, React on the frontend, and n8n with LLM APIs in between — taking ideas from rough concept to deployed, working products.',
+    "Whether it's NewsSphere aggregating 37+ news sources with AI summaries or pipelines processing 100K+ records a day, what drives me is shipping work that makes a measurable difference.",
   ],
   focus: [
     'Python',
@@ -260,12 +260,11 @@ export const experience = [
     company: 'MCM BPO Pvt. Ltd. — Mumbai Metropolitan Region',
     period: 'July 2025 – Present',
     points: [
-      '🚀 Automated critical business workflows resulting in 30% improvement in operational efficiency',
+      '🚀 Automated critical business workflows with Python, n8n, and Selenium — lifting operational efficiency by 30%',
       '⚡ Designed and deployed AI-powered solutions for content generation, analysis, and workflow optimization',
       '💻 Built responsive React frontends and internal dashboards, shipping end-to-end features from UI to API',
-      '🔄 Built scalable automation pipelines and browser automation systems using Python, n8n, and Selenium',
-      '🌐 Developed backend services, REST APIs, and data-processing systems supporting high-volume operations',
-      '📊 Engineered data pipelines processing 100K+ records daily while improving application performance and reliability',
+      '🌐 Developed backend services and REST APIs that keep high-volume, business-critical operations running',
+      '📊 Engineered data pipelines processing 100K+ records daily while improving performance and reliability',
     ],
   },
 ]

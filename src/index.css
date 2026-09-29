@@ -1268,6 +1268,26 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 16px;
 }
+/* 8+ badges: horizontal scroller with arrows (scrollbar hidden) */
+.bshelf__scroller {
+  position: relative;
+}
+.bshelf__grid--scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 6px;
+}
+.bshelf__grid--scroll::-webkit-scrollbar {
+  display: none;
+}
+.bshelf__grid--scroll .bshelf__card {
+  flex: 0 0 168px;
+  scroll-snap-align: start;
+}
 .bshelf__card {
   position: relative;
   display: flex;
@@ -2441,10 +2461,20 @@ img {
   .cert__stage { height: 250px; }
   .cert__slide { width: min(92%, 440px); }
 
-  /* Badge shelf — tighter cards, two per row */
+  /* Badge shelf — always exactly two per row on mobile */
   .bshelf { margin-top: 28px; padding: 24px; }
   .bshelf__head { flex-wrap: wrap; margin-bottom: 20px; }
-  .bshelf__grid { grid-template-columns: repeat(auto-fit, minmax(146px, 1fr)); gap: 12px; }
+  .bshelf__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  /* the scroller variant also collapses to the same 2-per-row grid */
+  .bshelf__grid--scroll { display: grid; overflow: visible; padding-bottom: 0; }
+  .bshelf__grid--scroll .bshelf__card { flex: initial; }
+  .bshelf__scroller .projects__arrow { display: none; }
+  /* odd number of badges: center the last one across both columns */
+  .bshelf__grid .bshelf__card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 6px);
+  }
   .bshelf__card { padding: 18px 10px 14px; }
   .bshelf__medal { width: 92px; height: 92px; padding: 10px; }
   .bshelf__title { font-size: 12.5px; }
