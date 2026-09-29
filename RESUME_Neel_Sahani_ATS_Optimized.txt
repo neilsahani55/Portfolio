@@ -1,0 +1,168 @@
+NEEL SAHANI
+AI Automation Engineer | Full-Stack Developer | Python & LLM Specialist
+
+MiraRoad (East), Thane – 401107
++91 83569 98852
+neilsahani55@gmail.com
+https://www.linkedin.com/in/neel-sahani/
+https://github.com/neilsahani55
+
+PROFESSIONAL SUMMARY
+
+Results-driven AI Automation Engineer with a proven track record of building intelligent systems, AI products, and end-to-end automation workflows that drive measurable business impact. Proficient across the full stack — Python, Flask, FastAPI backend, React frontend, n8n orchestration, and LLM integrations — with a 30% average efficiency improvement delivered across projects. Successfully shipped 5+ live AI products, delivered 15+ end-to-end solutions, and engineered data pipelines processing 100K+ records daily. Seeking to leverage deep expertise in AI/LLMs, automation, backend development, and data analytics to build scalable solutions in a challenging role.
+
+CORE COMPETENCIES
+
+AI Automation and Workflow Engineering
+Backend Development and REST API Design
+LLM Applications and Prompt Engineering
+Browser Automation and ETL Data Pipelines
+Database Design and Query Optimization
+Data Analytics and Business Intelligence Visualization
+Process Optimization and Business Automation
+AI Product Development and Full Lifecycle Delivery
+
+TECHNICAL SKILLS
+
+Programming Languages: Python, JavaScript, TypeScript, Java, C++, HTML5, CSS3
+Backend Frameworks: FastAPI, Flask, Django, RESTful APIs, Node.js
+Frontend Technologies: React, React Hooks, Vite, JSX, Responsive Web Design
+AI and Machine Learning: OpenAI API, Google Gemini API, LangChain, LLM Orchestration, Prompt Engineering, Agentic AI Workflows, Scikit-learn, TensorFlow, Pandas, NumPy
+Automation and RPA: n8n, Selenium, Web Scraping, Browser Automation, Workflow Automation, Robotic Process Automation
+Databases: PostgreSQL, MySQL, MongoDB, Redis, SQL, NoSQL, Database Design, Query Optimization
+Cloud and DevOps: Amazon Web Services (EC2, Lambda), Google Cloud Platform (GCP), Docker, Linux, Nginx, Git, GitHub, CI/CD Foundations
+Data Visualization and BI: Microsoft Power BI, Tableau, Matplotlib, Seaborn, Dashboard Development, Data Analysis
+IoT and Embedded: Arduino, C++, Ultrasonic Sensors, Embedded Systems, Microcontroller Programming
+
+PROFESSIONAL EXPERIENCE
+
+Full-Stack, AI and Automation Engineer
+MCM BPO Pvt. Ltd. — Mumbai Metropolitan Region
+July 2025 – Present
+
+- Automated critical business workflows using Python, n8n, and Selenium, reducing manual effort and lifting operational efficiency by 30% across the organization
+- Designed, developed, and deployed AI-powered solutions for content generation, data analysis, and workflow optimization using OpenAI and Google Gemini LLM APIs
+- Built responsive React frontends and internal business intelligence dashboards, shipping end-to-end features from UI design through REST API integration
+- Developed scalable backend services and REST APIs using FastAPI and Flask that support high-volume, business-critical operations with consistent uptime
+- Engineered robust ETL data pipelines processing 100,000+ records daily with optimized performance and reliability
+- Implemented relational and NoSQL database designs in PostgreSQL and MongoDB with query optimization for fast data retrieval
+- Collaborated cross-functionally to translate business requirements into technical specifications and delivered production-ready solutions
+
+KEY PROJECTS
+
+NewsSphere — AI Multilingual News Intelligence Platform
+Python, Flask, Google Gemini API, Web Scraping, News Aggregation
+Live Demo: https://newssphere.tech/  |  Source Code: https://github.com/neilsahani55/NewsSphere
+
+- Built and deployed an AI-powered multilingual news aggregation platform that aggregates and curates content from 37+ global news sources across 12+ categories
+- Implemented LLM-based smart summaries using the Google Gemini API, providing users with concise, at-a-glance AI-generated news digests
+- Engineered real-time update pipelines to keep content current and implemented category-based intelligent organization and filtering
+- Featured flagship project; shipped and live in production with active user base
+
+PromptStudio — AI Content and Prompt Engineering Studio
+Python, Flask, Google Gemini API, Prompt Engineering, AI Content Generation
+Live Demo: https://promptstudios.vercel.app  |  Source Code: https://github.com/neilsahani55/PromptStudio
+
+- Developed an AI content and prompt engineering platform enabling creators, marketers, and developers to craft polished prompts and production-ready copy in seconds
+- Designed reusable prompt templates and optimized LLM input patterns for high-quality, consistent output across multiple use cases and industries
+- Featured project with public production deployment, demonstrating full product lifecycle from concept to delivery
+
+World of PDF — Client-Side PDF Toolkit
+HTML5, CSS3, Vanilla JavaScript, Browser File API, Client-Side Processing
+Live Demo: https://world-of-pdf.vercel.app/  |  Source Code: https://github.com/neilsahani55/world-of-pdf
+
+- Built an all-in-one PDF toolkit with 48+ free tools for merging, splitting, compressing, converting, and securing PDF documents
+- Implemented 100% client-side processing architecture — no server uploads, no sign-up required — ensuring end-to-end user data privacy
+- Recent product release demonstrating deep expertise in vanilla JavaScript and browser-based file manipulation
+
+FlowGen — AI Content Generation Platform
+Python, n8n, OpenAI API, Workflow Orchestration, Automation
+Source Code: https://github.com/neilsahani55/Flowgen
+
+- Architected an AI content generation platform that transforms simple user briefs into ready-to-publish drafts through chained automated OpenAI workflows
+- Implemented n8n-based workflow orchestration to chain multiple LLM calls, sequential content processing steps, and automated quality checks
+- AI-classified project showcasing deep experience in LLM orchestration patterns and production automation pipelines
+
+AutoSocial Flow — End-to-End Social Media Automation System
+Python, n8n, Selenium, REST API Integrations, Web Automation, Content Scheduling
+
+- Designed and implemented an end-to-end social media automation system covering content scheduling, trend discovery, and multi-platform cross-posting
+- Built Selenium-based browser automation modules for platforms lacking official APIs and integrated REST API connections for natively supported networks
+- Automation-classified project demonstrating expertise in building reliable, scheduled automation for repetitive marketing and business processes
+
+SalesHub — AI-Powered Financial Due Diligence Engine (FinTech)
+Python, FastAPI, PostgreSQL, LLM Integration, Entity Verification, Risk Assessment
+
+- Developed an AI-driven due diligence engine for automated financial risk assessment and business entity verification workflows
+- Implemented high-performance FastAPI backend with PostgreSQL database for structured storage of financial records and entity profile data
+- Integrated LLM-based document analysis to extract actionable insights, flag regulatory anomalies, and generate automated risk assessment reports
+- FinTech-classified project showcasing domain adaptability in financial compliance and risk-analysis workflows
+
+Smart Stick for Blind — IoT Assistive Technology Device
+C++, Arduino, Ultrasonic Sensors, Buzzer, Embedded Systems, Microcontroller Programming
+
+- Engineered a sensor-based smart mobility stick for the visually impaired with real-time obstacle detection and immediate audio feedback alerts
+- Programmed Arduino microcontroller in C++ to process real-time ultrasonic sensor input and trigger appropriate tiered audio alert mechanisms
+- IoT-classified hardware-plus-software integration project demonstrating capability beyond pure software development
+
+Movie App — Native Android Movie Discovery Application
+Java, Android SDK, TMDB REST API, XML UI Layouts, RecyclerView
+
+- Developed a native Android movie discovery application using the TMDB REST API with intelligent search, trending movie lists, and detailed movie information views
+- Implemented clean architecture patterns, asynchronous network calls with background threading, and RecyclerView for memory-efficient list rendering
+- Android-classified mobile project showcasing Java programming and native Android SDK proficiency
+
+EDUCATION
+
+Bachelor of Science in Information Technology (BSc — IT)
+Chetana's H. S. College
+2022 – 2025  |  CGPI: 9.42
+
+Higher Secondary Certificate (HSC)
+Thakur Vidya Mandir
+2021 – 2022  |  Percentage: 66.17%
+
+Secondary School Certificate (SSC)
+Holy Angels English High School
+2019 – 2020  |  Percentage: 80.40%
+
+CERTIFICATIONS AND PROFESSIONAL CREDENTIALS
+
+Cloud and AI (AWS Skill Builder):
+- AWS Knowledge: Compute — Official Badge (July 2026)
+- AWS Cloud Practitioner Essentials
+- Foundations of Prompt Engineering (AWS)
+- AWS Lambda Foundations
+- Amazon EC2 Basics, Build with Amazon EC2, Innovations in Amazon EC2
+- Amazon EC2 Observability, Monitoring, and Troubleshooting
+- Right Size Your Amazon EC2 Workload
+- AWS Compute Services Overview
+- AWS Graviton Processors Fundamentals
+- AWS AI Chips: Trainium and Inferentia Fundamentals
+- Confidential Computing with AWS Compute
+- AWS Billing and Cost Management
+- AWS Foundations: Getting Started with the AWS Cloud Essentials
+
+Microsoft 365 Copilot (Microsoft Learn):
+- Get Started with Microsoft 365 Copilot — Learning Path Trophy (June 2026)
+- Introduction to AI Skills for Nonprofits — Learning Path Trophy (June 2026)
+- Introduction to Microsoft 365 Copilot — Module Badge (June 2026)
+- Create and Draft with Microsoft 365 Copilot — Module Badge (June 2026)
+- Explore the Possibilities with Microsoft 365 Copilot — Module Badge (June 2026)
+- Optimize and Extend Microsoft 365 Copilot — Module Badge (June 2026)
+
+Virtual Job Simulations (Forage):
+- Wells Fargo: Software Engineering Job Simulation — Completed
+- Deloitte: Data Analytics Job Simulation — Completed
+- Tata: GenAI Powered Data Analytics — Completed
+- Tata: Data Visualization — Completed
+
+Data Analytics and Business Intelligence:
+- Generative AI Certification (OutSkill)
+- Learning Microsoft Power BI (Infosys Springboard)
+- Power BI Skill Course (Skill Course)
+- Microsoft Excel 2016 Certification (Infosys Springboard)
+
+UI and UX Design Foundations:
+- Introduction to UI/UX Design (Infosys Springboard)
+- UX and UI Color Theory (Infosys Springboard)
