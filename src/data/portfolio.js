@@ -318,7 +318,7 @@ export const projects = [
   },
   {
     title: 'FlowGen',
-    desc: 'Django-based AI content generation platform that turns simple briefs into ready-to-publish blog posts, landing pages and customer reports via n8n + OpenAI webhook pipelines.',
+    desc: 'Django 5 AI content generation platform with full user auth, a central dashboard, and n8n + OpenAI webhook pipelines that turn simple briefs into ready-to-publish blogs, landing pages, page analyses and customer rate reports — complete with a Jazzmin-branded admin, Excel export and a custom theme system with gradient buttons and animated ripple effects.',
     tags: ['Python', 'Django', 'n8n', 'OpenAI', 'Jazzmin'],
     icon: 'workflow',
     tone: 'slate',
