@@ -163,8 +163,8 @@ Full-stack AI and automation engineer experienced in building AI agents, LLM app
   {Python, Django, n8n, OpenAI, Jazzmin}
   {\href{https://github.com/neilsahani55/Flowgen}{\faGithub\ Code}}
 \begin{bullets}
-  \item Built a Django 5 content platform with user auth, dashboard and n8n + OpenAI webhook pipelines, generating blogs, landing pages, analyses and reports.
-  \item Added a Jazzmin-branded admin panel, Excel export and a custom theme system with gradient buttons and animated ripple effects.
+  \item Built a Django 5 content platform with full user auth, a central dashboard and n8n + OpenAI webhook pipelines — generating blogs, landing pages, page analyses and customer-rate reports.
+  \item Implemented async cache-backed job status APIs with session/job IDs, plus OpenPyXL Excel export for reports.
 \end{bullets}
 
 \project{Smart Stick for the Blind -- Assistive IoT Device}
