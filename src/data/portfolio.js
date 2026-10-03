@@ -282,8 +282,8 @@ export const projectsIntro = {
 export const projects = [
   {
     title: 'NewsSphere',
-    desc: 'AI-powered multilingual news intelligence platform aggregating 37+ sources across 12+ categories, with smart summaries and real-time updates.',
-    tags: ['Python', 'Flask', 'Gemini API'],
+    desc: 'AI-powered multilingual news intelligence platform aggregating 37+ sources across 12+ categories, with LLM smart summaries, personalization, sports, markets and 18-language translation.',
+    tags: ['React', 'Supabase', 'Node.js', 'GitHub Actions', 'NVIDIA NIM'],
     icon: 'newspaper',
     tone: 'violet',
     color: '#e9382cff',
@@ -294,8 +294,8 @@ export const projects = [
   },
   {
     title: 'PromptStudio',
-    desc: 'AI content and prompt studio that helps creators, marketers and developers craft polished prompts and ready-to-use copy in seconds.',
-    tags: ['Python', 'Flask', 'Gemini API'],
+    desc: 'AI prompt-generation studio and multi-model media suite — turn posts or screenshots into Midjourney/DALL-E/SD/Flux prompts and generate images/videos across 4+ models at once.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Google Genkit', 'TailwindCSS'],
     icon: 'sparkles',
     tone: 'amber',
     color: '#ea580c',
@@ -306,8 +306,8 @@ export const projects = [
   },
   {
     title: 'World of PDF',
-    desc: 'All-in-one PDF toolkit with 48+ free tools to merge, split, compress, convert and secure PDFs — works right in the browser, no sign-up required.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
+    desc: 'All-in-one PDF toolkit with 48+ free tools to merge, split, compress, convert, OCR and secure PDFs — 100% client-side processing, no sign-up required.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'pdf-lib', 'Tesseract.js'],
     icon: 'filetext',
     tone: 'indigo',
     color: '#6d5ce8',
@@ -318,8 +318,8 @@ export const projects = [
   },
   {
     title: 'FlowGen',
-    desc: 'AI content generation platform that turns simple briefs into ready-to-publish drafts through automated OpenAI workflows.',
-    tags: ['Python', 'n8n', 'OpenAI'],
+    desc: 'Django-based AI content generation platform that turns simple briefs into ready-to-publish blog posts, landing pages and customer reports via n8n + OpenAI webhook pipelines.',
+    tags: ['Python', 'Django', 'n8n', 'OpenAI', 'Jazzmin'],
     icon: 'workflow',
     tone: 'slate',
     color: '#1e40af',
