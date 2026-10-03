@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Neel Sahani — Full-Stack, AI & Automation Engineer (Resume)</title>
+<meta name="description" content="Resume of Neel Sahani — Full-Stack, AI and Automation Engineer. Python, Django, n8n, LLM Agents, React, Next.js, Automation, UCaaS, Voice AI." />
+<meta name="keywords" content="Neel Sahani, Resume, CV, Python, Generative AI, LLM, AI Agents, n8n, Selenium, Django, FastAPI, React, Next.js, UCaaS, Voice AI, PostgreSQL, AWS" />
+<meta name="author" content="Neel Sahani" />
+<meta property="og:title" content="Neel Sahani — Resume" />
+<meta property="og:description" content="Full-Stack, AI & Automation Engineer — Resume (HTML version matching the LaTeX source)." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://neelsahani.me/resume/" />
+<link rel="canonical" href="https://neelsahani.me/resume/" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<style>
+  :root {
+    --head-blue: #1B4F72;
+    --accent-blue: #2E86C1;
+    --body: #2C3E50;
+    --muted: #5D6D7E;
+    --rule: #2E86C1;
+    --paper: #ffffff;
+    --bg: #eef2f7;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--body);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.32;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 210mm;
+    margin: 24px auto;
+    background: var(--paper);
+    padding: 0.45in 0.6in;
+    box-shadow: 0 6px 24px rgba(27, 79, 114, 0.08), 0 2px 8px rgba(0,0,0,0.04);
+    border-radius: 4px;
+  }
+  a { color: var(--accent-blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* -------- HEADER -------- */
+  .header { text-align: center; margin-bottom: 10px; }
+  .header h1 {
+    margin: 0;
+    color: var(--head-blue);
+    font-size: 24pt;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .header .role {
+    color: var(--accent-blue);
+    font-size: 11.5pt;
+    font-weight: 600;
+    margin-top: 5px;
+  }
+  .header .contact {
+    color: var(--muted);
+    font-size: 9.5pt;
+    margin-top: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    row-gap: 2px;
+  }
+  .header .contact span.sep { opacity: 0.55; }
+  .header .contact i { margin-right: 4px; }
+  .header .contact-row-2 { margin-top: 3px; }
+
+  /* -------- SECTIONS -------- */
+  section { margin-top: 12pt; }
+  h2.section-title {
+    margin: 0 0 7pt 0;
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: var(--head-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding-bottom: 3px;
+  }
+  h2.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 3pt;
+    height: 11pt;
+    background: var(--accent-blue);
+    transform: translateY(1px);
+    border-radius: 0.5px;
+  }
+  h2.section-title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.7pt;
+    background: var(--rule);
+  }
+
+  /* -------- ENTRIES (Experience / Education) -------- */
+  .entry-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px 12px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .entry-title {
+    color: var(--head-blue);
+    font-weight: 700;
+  }
+  .entry-date, .entry-location {
+    color: var(--muted);
+    font-size: 9.5pt;
+    white-space: nowrap;
+  }
+  .entry-company {
+    font-style: italic;
+    margin-top: 1pt;
+  }
+  .entry-location { font-style: italic; }
+  .entry-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  /* subhead (Automation & Data Engineering, etc.) */
+  .subhead {
+    color: var(--accent-blue);
+    font-size: 10pt;
+    font-weight: 700;
+    margin-top: 7px;
+    margin-bottom: 2px;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* -------- PROJECT TITLES -------- */
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .project-title {
+    color: var(--head-blue);
+    font-weight: 700;
+  }
+  .project-links { font-size: 9.5pt; }
+  .project-stack {
+    color: var(--muted);
+    font-size: 9.5pt;
+    font-style: italic;
+    margin-top: 1pt;
+  }
+
+  /* -------- LISTS -------- */
+  ul {
+    margin: 2pt 0 6pt 0;
+    padding-left: 1.3em;
+  }
+  ul.tight {
+    margin: 2pt 0 0 0;
+  }
+  li {
+    margin: 1.5pt 0;
+  }
+  li b { color: var(--body); font-weight: 700; }
+  .skill-cat { font-weight: 700; }
+
+  /* gap between two entries (e.g. MCA and BSc IT) */
+  .gap { height: 6pt; }
+
+  /* ACTION BAR (top-right, print / download PDF) */
+  .actions {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+  }
+  .actions a, .actions button {
+    font-size: 10pt;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: var(--head-blue);
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(27,79,114,0.25);
+  }
+  .actions a:hover, .actions button:hover { background: var(--accent-blue); text-decoration: none; }
+  .actions .ghost { background: #fff; color: var(--head-blue); box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+  .actions .ghost:hover { background: #f4f8fc; color: var(--head-blue); }
+
+  /* mobile: collapse margins, reduce side padding */
+  @media (max-width: 820px) {
+    .wrap { padding: 18px 16px; margin: 0; border-radius: 0; }
+    .actions {
+      position: sticky;
+      top: 0;
+      right: auto;
+      justify-content: center;
+      padding: 10px;
+      background: rgba(238,242,247,0.95);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(27,79,114,0.1);
+    }
+  }
+
+  /* print: full A4, no actions, no background */
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: #fff; }
+    .wrap { box-shadow: none; margin: 0; border-radius: 0; padding: 12mm 15mm; max-width: none; }
+    .actions { display: none !important; }
+    section, .entry-row, .project-head { page-break-inside: avoid; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="actions">
+  <button onclick="window.print()" title="Print / Save as PDF"><i class="fa-solid fa-print"></i> Print / PDF</button>
+  <a href="/resume.tex" title="Download LaTeX source"><i class="fa-solid fa-file-code"></i> LaTeX (.tex)</a>
+  <a class="ghost" href="/resume.md" title="View Markdown version"><i class="fa-brands fa-markdown"></i> Markdown</a>
+</div>
+
+<main class="wrap">
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Neel Sahani</h1>
+    <div class="role">Full-Stack, AI &amp; Automation Engineer</div>
+    <div class="contact">
+      <span><i class="fa-solid fa-location-dot"></i> Mumbai, Maharashtra, India</span>
+      <span class="sep">|</span>
+      <span><i class="fa-solid fa-phone"></i> +91-83569-98852</span>
+      <span class="sep">|</span>
+      <span><i class="fa-solid fa-envelope"></i> <a href="mailto:neilsahani55@gmail.com">neilsahani55@gmail.com</a></span>
+    </div>
+    <div class="contact contact-row-2">
+      <span><i class="fa-solid fa-globe"></i> <a href="https://neelsahani.me">neelsahani.me</a></span>
+      <span class="sep">|</span>
+      <span><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/neel-sahani/">linkedin.com/in/neel-sahani</a></span>
+      <span class="sep">|</span>
+      <span><i class="fa-brands fa-github"></i> <a href="https://github.com/neilsahani55">github.com/neilsahani55</a></span>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section>
+    <h2 class="section-title">Professional Summary</h2>
+    <p style="margin: 0;">
+      Full-stack AI and automation engineer experienced in building AI agents, LLM applications and workflow automation with Python, Django, n8n and React. Improved operational efficiency by <b>30%</b> at MCM BPO through end-to-end automation, built data pipelines processing <b>100K+ records daily</b>, and shipped AI products including a voice AI receptionist. Delivered <b>15+ projects</b> and won the <b>MSSU Tata Startup Award</b>.
+    </p>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section>
+    <h2 class="section-title">Technical Skills</h2>
+    <ul class="tight">
+      <li><span class="skill-cat">Generative AI &amp; LLMs:</span> OpenAI, Google Gemini, Anthropic Claude, NVIDIA NIM, OpenRouter, Ollama, LangChain, Google Genkit, AI Agents, Prompt Engineering, Voice AI</li>
+      <li><span class="skill-cat">Automation:</span> n8n, Selenium, Workflow Automation, Process Automation, Webhooks, Web Scraping, ETL Pipelines, GitHub Actions</li>
+      <li><span class="skill-cat">Languages &amp; Frameworks:</span> Python, JavaScript, TypeScript, SQL, Django, FastAPI, Flask, Node.js, React, Next.js, Tailwind CSS, C++</li>
+      <li><span class="skill-cat">Databases &amp; Cloud:</span> PostgreSQL, MySQL, MongoDB, Redis, Supabase, SQLite, AWS, GCP, Docker, Vercel, Linux, Git</li>
+      <li><span class="skill-cat">Data Analytics &amp; ML:</span> Pandas, NumPy, scikit-learn, Power BI, Tableau</li>
+    </ul>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section>
+    <h2 class="section-title">Work Experience</h2>
+
+    <div class="entry-row">
+      <div class="entry-title">Full-Stack, AI &amp; Automation Engineer</div>
+      <div class="entry-date">Jul 2025 &ndash; Present</div>
+    </div>
+    <div class="entry-meta-row">
+      <div class="entry-company">MCM BPO Pvt. Ltd.</div>
+      <div class="entry-location">Mumbai, Maharashtra</div>
+    </div>
+
+    <div class="subhead">Automation &amp; Data Engineering</div>
+    <ul class="tight">
+      <li>Automated critical business workflows end to end with Python, n8n and Selenium, improving operational efficiency by <b>30%</b>.</li>
+      <li>Engineered data pipelines processing <b>100K+ records daily</b>, improving throughput and reliability.</li>
+      <li>Automated browser-based tasks and data processing with Selenium, eliminating repetitive manual work.</li>
+    </ul>
+
+    <div class="subhead">AI Agents &amp; Workflows</div>
+    <ul class="tight">
+      <li>Built an n8n AI agent for telecom carrier due diligence that verifies FCC and RMD registrations, assigns risk tiers and recommends credit limits across <b>9 brands</b>.</li>
+      <li>Automated SEO content generation for <b>12 brands</b> in parallel, along with AI-driven company data enrichment and webpage auditing workflows.</li>
+    </ul>
+
+    <div class="subhead">AI Products &amp; Full-Stack Development</div>
+    <ul class="tight">
+      <li>Developed an <b>AI Receptionist</b>, a real-time voice agent built with React, LiveKit and Whisper, supporting <b>9 LLM providers</b>.</li>
+      <li>Built <b>FlowGen</b>, a Django platform that orchestrates n8n AI workflows for blogs, landing pages and page analysis.</li>
+      <li>Developed features for the company's <b>UCaaS</b> platform and <b>Flowchat</b> using Django, React and REST APIs.</li>
+    </ul>
+
+    <div style="height: 8pt;"></div>
+
+    <div class="entry-row">
+      <div class="entry-title">Summer Intern, Client Interaction Team</div>
+      <div class="entry-date">May 2024 &ndash; Jun 2024</div>
+    </div>
+    <div class="entry-meta-row">
+      <div class="entry-company">Chetana's Self Financing Courses</div>
+      <div class="entry-location">Mumbai, Maharashtra</div>
+    </div>
+    <ul>
+      <li>Managed communication with prospective students and parents through email, calls and meetings during admissions.</li>
+      <li>Maintained the admissions database and received a letter of appreciation for professionalism.</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-head">
+      <div class="project-title">NewsSphere &mdash; AI News Intelligence Platform</div>
+      <div class="project-links">
+        <a href="https://www.newssphere.tech"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+        &nbsp;|&nbsp;
+        <a href="https://github.com/neilsahani55/NewsSphere"><i class="fa-brands fa-github"></i> Code</a>
+      </div>
+    </div>
+    <div class="project-stack">React, Supabase, GitHub Actions, Vercel, LLM APIs</div>
+    <ul>
+      <li>Built a live multilingual news platform aggregating <b>50+ sources</b> across 12 categories, with 217+ commits in production.</li>
+      <li>Automated 4 scheduled pipelines that enrich every article with AI summaries, key points and sentiment, using multi-provider LLM fallback.</li>
+      <li>Implemented Google Sign-In, bookmarks, a personalised feed, translation into 18 languages and an OSINT reader.</li>
+    </ul>
+
+    <div class="project-head">
+      <div class="project-title">PromptStudio &mdash; Generative AI Prompt &amp; Media SaaS</div>
+      <div class="project-links">
+        <a href="https://promptstudios.vercel.app"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+        &nbsp;|&nbsp;
+        <a href="https://github.com/neilsahani55/PromptStudio"><i class="fa-brands fa-github"></i> Code</a>
+      </div>
+    </div>
+    <div class="project-stack">Next.js, TypeScript, Google Genkit, Supabase</div>
+    <ul>
+      <li>Launched a SaaS that converts blog posts and screenshots into optimised prompts for Midjourney, DALL-E 3, Stable Diffusion and Flux.</li>
+      <li>Enabled image generation on up to <b>4 AI models in parallel</b>, with a daily credit system and automatic refunds on failure.</li>
+      <li>Secured the platform with Google OAuth, JWT sessions and AES-256-GCM encryption, plus an admin panel with usage analytics.</li>
+    </ul>
+
+    <div class="project-head">
+      <div class="project-title">FlowGen &mdash; AI Content Generation Platform</div>
+      <div class="project-links">
+        <a href="https://github.com/neilsahani55/Flowgen"><i class="fa-brands fa-github"></i> Code</a>
+      </div>
+    </div>
+    <div class="project-stack">Python, Django, n8n, OpenAI, Jazzmin</div>
+    <ul>
+      <li>Built a Django 5 web application with a central dashboard where users generate and edit blogs, landing pages and page analyses &mdash; complete with SEO-optimised meta titles, meta descriptions and images.</li>
+      <li>Added user authentication (register, login, profile) and integrated n8n + OpenAI webhook pipelines that deliver content asynchronously.</li>
+    </ul>
+
+    <div class="project-head">
+      <div class="project-title">Smart Stick for the Blind &mdash; Assistive IoT Device</div>
+      <div class="project-links"><span style="color: var(--accent-blue); font-style: italic; font-weight: 600;"><i class="fa-solid fa-trophy"></i> Award Winner</span></div>
+    </div>
+    <div class="project-stack">Arduino, C++, Ultrasonic Sensors</div>
+    <ul>
+      <li>Designed an obstacle-detecting walking stick with real-time audio alerts; presented at Startup Mahakumbh, New Delhi.</li>
+    </ul>
+
+    <div class="project-head">
+      <div class="project-title">Other Projects</div>
+      <div class="project-links"><a href="https://github.com/neilsahani55"><i class="fa-brands fa-github"></i> All Repositories</a></div>
+    </div>
+    <div class="project-stack">Python, JavaScript, Next.js</div>
+    <ul>
+      <li><b><a href="https://world-of-pdf.vercel.app">World of PDF</a>:</b> Browser-based toolkit delivering <b>49 free PDF tools</b> powered by pdf-lib, PDF.js and Tesseract.js OCR.</li>
+      <li><b><a href="https://github.com/neilsahani55/BackLink_Leads">BackLink Leads</a>:</b> Python pipeline that discovers and ranks B2B outreach leads using Common Crawl data.</li>
+    </ul>
+  </section>
+
+  <!-- AWARDS -->
+  <section>
+    <h2 class="section-title">Awards &amp; Achievements</h2>
+    <ul class="tight">
+      <li><b>MSSU Tata Startup Award (Winner)</b> for Smart Stick for the Blind; presented at <b>Startup Mahakumbh, New Delhi</b>.</li>
+      <li><b>MHT CET (MCA): 99.59 percentile</b>, ranking in the top 0.5% of candidates statewide.</li>
+    </ul>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2 class="section-title">Education</h2>
+
+    <div class="entry-row">
+      <div class="entry-title">Master of Computer Applications (MCA)</div>
+      <div class="entry-date">2026 &ndash; 2028 (Pursuing)</div>
+    </div>
+    <div class="entry-meta-row">
+      <div class="entry-company">Indira Gandhi National Open University (IGNOU)</div>
+      <div class="entry-location"></div>
+    </div>
+
+    <div class="gap"></div>
+
+    <div class="entry-row">
+      <div class="entry-title">Bachelor of Science in Information Technology (BSc IT)</div>
+      <div class="entry-date">2022 &ndash; 2025</div>
+    </div>
+    <div class="entry-meta-row">
+      <div class="entry-company">Chetana's H. S. College, University of Mumbai</div>
+      <div class="entry-location">CGPI: 9.42/10</div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <h2 class="section-title">Certifications</h2>
+    <ul class="tight">
+      <li><b>AWS:</b> Knowledge: Compute badge, Cloud Practitioner Essentials, Prompt Engineering, Lambda Foundations, and 17 more Skill Builder courses</li>
+      <li><b>Forage &amp; Others:</b> Software Engineering (Wells Fargo), Data Analytics (Deloitte), GenAI Data Analytics (Tata), Microsoft 365 Copilot, Power BI (Infosys)</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
