@@ -1,227 +1,206 @@
-NEEL SAHANI
-Full-Stack, AI and Automation Engineer
+%-------------------------------------------------------------
+% Neel Sahani - Resume
+% Compile with pdfLaTeX on Overleaf (all packages are standard).
+%-------------------------------------------------------------
+\documentclass[10pt,a4paper]{article}
 
-Mumbai, Maharashtra, India
-+91 83569 98852
-neilsahani55@gmail.com
-https://neelsahani.me
-https://www.linkedin.com/in/neel-sahani/
-https://github.com/neilsahani55
+\usepackage[top=0.45in, bottom=0.45in, left=0.6in, right=0.6in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\input{glyphtounicode}
+\pdfgentounicode=1   % keeps the PDF text machine-readable for ATS
 
-PROFESSIONAL SUMMARY
+%---------- Colours ----------
+\definecolor{headblue}{HTML}{1B4F72}
+\definecolor{accentblue}{HTML}{2E86C1}
+\definecolor{bodytext}{HTML}{2C3E50}
+\definecolor{darkgray}{HTML}{5D6D7E}
 
-Full-stack AI and automation engineer experienced in building AI agents, LLM applications, and intelligent workflow automation with Python, Django, n8n, and React. Improved operational efficiency by 30% at MCM BPO through end-to-end business process automation, engineered data pipelines processing 100,000+ records daily, and shipped AI products including a production real-time voice AI receptionist. Delivered 15+ projects end-to-end and won the MSSU Tata Startup Award at Startup Mahakumbh, New Delhi. Ranked 99.59 percentile in MHT CET (MCA), placing in the top 0.5% of candidates statewide. Currently pursuing Master of Computer Applications (MCA) at IGNOU.
+%---------- Page ----------
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
 
-TECHNICAL SKILLS
+%---------- Section style: accent bar + rule ----------
+\titleformat{\section}
+  {\fontsize{11.5pt}{13pt}\selectfont\bfseries\color{headblue}\uppercase}
+  {}{0em}{\color{accentblue}\rule[-2pt]{3pt}{11pt}\hspace{6pt}}
+  [\vspace{2pt}{\color{accentblue}\hrule height 0.7pt}]
+\titlespacing*{\section}{0pt}{12pt}{7pt}
 
-Generative AI and Large Language Models (LLMs):
-OpenAI API, Google Gemini API, Anthropic Claude, NVIDIA NIM, OpenRouter, Ollama, LangChain, Google Genkit 1.20, AI Agents, Agentic AI Workflows, Prompt Engineering, Voice AI, Whisper Speech-to-Text, LiveKit Real-Time Audio
+%---------- PDF metadata (helps ATS and search) ----------
+\hypersetup{
+  colorlinks=true, linkcolor=accentblue, urlcolor=accentblue,
+  pdftitle={Neel Sahani - Full-Stack, AI and Automation Engineer},
+  pdfauthor={Neel Sahani},
+  pdfsubject={AI Automation Engineer, Python Developer, Full-Stack Developer},
+  pdfkeywords={Python, Generative AI, LLM, AI Agents, n8n, Workflow Automation, Selenium, Django, FastAPI, React, Next.js, UCaaS, Unified Communications, Voice AI, PostgreSQL, REST APIs, AWS, Docker}
+}
 
-Automation and Orchestration:
-n8n Workflow Automation, Selenium Browser Automation, Business Process Automation, RPA, Webhooks, Web Scraping, ETL Data Pipelines, GitHub Actions CI/CD, Workflow Orchestration, Scheduled Job Automation
+%---------- Helpers ----------
+% Each entry reserves space so it never splits across pages.
+\newcommand{\entry}[4]{%
+  \needspace{5\baselineskip}%
+  {\bfseries\color{headblue}#1} \hfill {\color{darkgray}\small #2}\\[1pt]
+  {\itshape #3} \hfill {\color{darkgray}\small\itshape #4}\par}
 
-Programming Languages and Frameworks:
-Python, JavaScript, TypeScript, SQL, C++, Django 5, FastAPI, Flask, Node.js, React 18/19, Next.js 15 App Router, TailwindCSS 3.4, HTML5, CSS3, Vanilla JavaScript
+\newcommand{\project}[3]{%
+  \needspace{4\baselineskip}%
+  {\bfseries\color{headblue}#1} \hfill {\small #3}\\[1pt]
+  {\color{darkgray}\small\itshape #2}\par}
 
-Databases, Cloud, and DevOps:
-PostgreSQL, MySQL, MongoDB, Redis, Supabase Postgres + Auth, SQLite, Amazon Web Services (AWS), Google Cloud Platform (GCP), Docker, Vercel Serverless, Linux, Git, GitHub, Nginx
+\newcommand{\subhead}[1]{%
+  \needspace{3\baselineskip}%
+  \vspace{4pt}{\color{accentblue}\small\bfseries #1}\par}
 
-Data Analytics and Machine Learning:
-Pandas, NumPy, Scikit-learn, Microsoft Power BI, Tableau, Matplotlib, Seaborn, Data Visualization, Business Intelligence
+\newenvironment{bullets}
+  {\begin{itemize}[leftmargin=1.3em, itemsep=1.5pt, parsep=0pt, topsep=2pt]}
+  {\end{itemize}\vspace{6pt}}
 
-CORE COMPETENCIES
+\newenvironment{tightbullets}
+  {\begin{itemize}[leftmargin=1.3em, itemsep=1.5pt, parsep=0pt, topsep=2pt]}
+  {\end{itemize}}
 
-AI Agent Development and Multi-Agent Systems
-Full-Stack Web Application Development
-Backend Engineering and REST API Design
-LLM Orchestration and Production AI Integration
-Voice AI and Real-Time Communication (LiveKit, Whisper)
-Telecom Due Diligence Automation and Risk Tiering
-SEO Content Automation and Webpage Auditing
-UCaaS and Unified Communications Platform Features
-Browser Automation and Web Scraping at Scale
-ETL Engineering and High-Volume Data Pipelines
-Database Design, Row Level Security, Query Optimization
-Authentication Systems: JWT, OAuth2, Google Sign-In, Supabase Auth
-Encrypted Secrets Storage: AES-256-GCM
-AES Encrypted BYOK (Bring Your Own Key) Key Management
-Admin Dashboard Development and Usage Analytics
-Cross-Platform Responsive Design and Theming Systems
-Client-Side Processing Architecture (Zero Server Uploads)
+\newcommand{\gap}{\vspace{6pt}}
 
-PROFESSIONAL EXPERIENCE
+%=============================================================
+\begin{document}
+\color{bodytext}
+\fontsize{10.5pt}{13pt}\selectfont
+\raggedright
+\setlength{\emergencystretch}{3em}
 
-Full-Stack, AI and Automation Engineer
-MCM BPO Pvt. Ltd. — Mumbai, Maharashtra
-July 2025 – Present
+%---------- HEADER ----------
+\begin{center}
+  {\fontsize{24pt}{28pt}\selectfont\bfseries\color{headblue} Neel Sahani}\\[5pt]
+  {\fontsize{11.5pt}{13pt}\selectfont\color{accentblue} Full-Stack, AI \& Automation Engineer}\\[7pt]
+  {\small\color{darkgray}
+  \faMapMarker*\ Mumbai, Maharashtra, India \quad\textbar\quad
+  \faPhone\ +91-83569-98852 \quad\textbar\quad
+  \faEnvelope\ \href{mailto:neilsahani55@gmail.com}{neilsahani55@gmail.com}}\\[3pt]
+  {\small\color{darkgray}
+  \faGlobe\ \href{https://neelsahani.me}{neelsahani.me} \quad\textbar\quad
+  \faLinkedin\ \href{https://www.linkedin.com/in/neel-sahani/}{linkedin.com/in/neel-sahani} \quad\textbar\quad
+  \faGithub\ \href{https://github.com/neilsahani55}{github.com/neilsahani55}}
+\end{center}
+\vspace{-4pt}
 
-Automation and Data Engineering
+%---------- SUMMARY ----------
+\section{Professional Summary}
+Full-stack AI and automation engineer experienced in building AI agents, LLM applications and workflow automation with Python, Django, n8n and React. Improved operational efficiency by \textbf{30\%} at MCM BPO through end-to-end automation, built data pipelines processing \textbf{100K+ records daily}, and shipped AI products including a voice AI receptionist. Delivered \textbf{15+ projects} and won the \textbf{MSSU Tata Startup Award}.
 
-- Automated critical business workflows end-to-end with Python, n8n, and Selenium, eliminating repetitive manual tasks and improving operational efficiency by 30% across the organization
-- Engineered high-volume ETL data pipelines processing 100,000+ records daily with optimized throughput, reliability, and error handling
-- Implemented Selenium-based browser automation for complex web-based tasks and data processing jobs, removing hours of recurring human effort
+%---------- SKILLS ----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, parsep=0pt, topsep=0pt]
+  \item \textbf{Generative AI \& LLMs:} OpenAI, Google Gemini, Anthropic Claude, NVIDIA NIM, OpenRouter, Ollama, LangChain, Google Genkit, AI Agents, Prompt Engineering, Voice AI
+  \item \textbf{Automation:} n8n, Selenium, Workflow Automation, Process Automation, Webhooks, Web Scraping, ETL Pipelines, GitHub Actions
+  \item \textbf{Languages \& Frameworks:} Python, JavaScript, TypeScript, SQL, Django, FastAPI, Flask, Node.js, React, Next.js, Tailwind CSS, C++
+  \item \textbf{Databases \& Cloud:} PostgreSQL, MySQL, MongoDB, Redis, Supabase, SQLite, AWS, GCP, Docker, Vercel, Linux, Git
+  \item \textbf{Data Analytics \& ML:} Pandas, NumPy, scikit-learn, Power BI, Tableau
+\end{itemize}
 
-AI Agents and Workflow Automation
+%---------- EXPERIENCE ----------
+\section{Work Experience}
+\entry{Full-Stack, AI \& Automation Engineer}{Jul 2025 -- Present}
+      {MCM BPO Pvt.\ Ltd.}{Mumbai, Maharashtra}
 
-- Designed and shipped an n8n-based AI agent for telecom carrier due diligence that automatically verifies FCC and RMD registrations, calculates and assigns risk tiers, and recommends data-driven credit limits across 9 distinct telecom brands
-- Automated scalable SEO content generation for 12 brands running in parallel through chained LLM workflows, integrated with AI-driven company data enrichment and automated webpage auditing pipelines
+\subhead{Automation \& Data Engineering}
+\begin{tightbullets}
+  \item Automated critical business workflows end to end with Python, n8n and Selenium, improving operational efficiency by \textbf{30\%}.
+  \item Engineered data pipelines processing \textbf{100K+ records daily}, improving throughput and reliability.
+  \item Automated browser-based tasks and data processing with Selenium, eliminating repetitive manual work.
+\end{tightbullets}
 
-AI Products and Full-Stack Development
+\subhead{AI Agents \& Workflows}
+\begin{tightbullets}
+  \item Built an n8n AI agent for telecom carrier due diligence that verifies FCC and RMD registrations, assigns risk tiers and recommends credit limits across \textbf{9 brands}.
+  \item Automated SEO content generation for \textbf{12 brands} in parallel, along with AI-driven company data enrichment and webpage auditing workflows.
+\end{tightbullets}
 
-- Developed an AI Receptionist: a production real-time voice agent built with React on the frontend, LiveKit for real-time audio/video transport, and Whisper for speech-to-text, with unified support for 9 different LLM provider backends
-- Built FlowGen, a Django 5 web application that orchestrates n8n AI workflows for automated blog post generation, landing page creation, and intelligent page analysis
-- Designed and shipped customer-facing features for the company's UCaaS (Unified Communications as a Service) platform and the Flowchat product using Django backend APIs, React frontends, and REST API integration
+\subhead{AI Products \& Full-Stack Development}
+\begin{tightbullets}
+  \item Developed an \textbf{AI Receptionist}, a real-time voice agent built with React, LiveKit and Whisper, supporting \textbf{9 LLM providers}.
+  \item Built \textbf{FlowGen}, a Django platform that orchestrates n8n AI workflows for blogs, landing pages and page analysis.
+  \item Developed features for the company's \textbf{UCaaS} platform and \textbf{Flowchat} using Django, React and REST APIs.
+\end{tightbullets}
+\vspace{8pt}
 
-Summer Intern, Client Interaction Team
-Chetana's Self Financing Courses — Mumbai, Maharashtra
-May 2024 – June 2024
+\entry{Summer Intern, Client Interaction Team}{May 2024 -- Jun 2024}
+      {Chetana's Self Financing Courses}{Mumbai, Maharashtra}
+\begin{bullets}
+  \item Managed communication with prospective students and parents through email, calls and meetings during admissions.
+  \item Maintained the admissions database and received a letter of appreciation for professionalism.
+\end{bullets}
 
-- Managed end-to-end communication with prospective students and parents during the admissions cycle via email, phone calls, and in-person meetings
-- Maintained the institutional admissions database accurately and received an official Letter of Appreciation for consistent professionalism throughout the cycle
+%---------- PROJECTS ----------
+\section{Projects}
+\project{NewsSphere -- AI News Intelligence Platform}
+  {React, Supabase, GitHub Actions, Vercel, LLM APIs}
+  {\href{https://www.newssphere.tech}{\faExternalLink*\ Live} \;\textbar\; \href{https://github.com/neilsahani55/NewsSphere}{\faGithub\ Code}}
+\begin{bullets}
+  \item Built a live multilingual news platform aggregating \textbf{50+ sources} across 12 categories, with 217+ commits in production.
+  \item Automated 4 scheduled pipelines that enrich every article with AI summaries, key points and sentiment, using multi-provider LLM fallback.
+  \item Implemented Google Sign-In, bookmarks, a personalised feed, translation into 18 languages and an OSINT reader.
+\end{bullets}
 
-KEY PROJECTS
+\project{PromptStudio -- Generative AI Prompt \& Media SaaS}
+  {Next.js, TypeScript, Google Genkit, Supabase}
+  {\href{https://promptstudios.vercel.app}{\faExternalLink*\ Live} \;\textbar\; \href{https://github.com/neilsahani55/PromptStudio}{\faGithub\ Code}}
+\begin{bullets}
+  \item Launched a SaaS that converts blog posts and screenshots into optimised prompts for Midjourney, DALL-E 3, Stable Diffusion and Flux.
+  \item Enabled image generation on up to \textbf{4 AI models in parallel}, with a daily credit system and automatic refunds on failure.
+  \item Secured the platform with Google OAuth, JWT sessions and AES-256-GCM encryption, plus an admin panel with usage analytics.
+\end{bullets}
 
-NewsSphere — AI Multilingual News Intelligence Platform
-React 18, Vite 5, Supabase (PostgreSQL + Auth), Node.js ETL Pipelines, GitHub Actions, NVIDIA NIM LLM with Gemini/OpenAI Fallback, Vercel Serverless Functions, Google Translate 18 Languages, Wikipedia REST API
-Live Demo: https://www.newssphere.tech  |  Source Code: https://github.com/neilsahani55/NewsSphere
+\project{FlowGen -- AI Content Generation Platform}
+  {Python, Django, n8n, OpenAI, Jazzmin}
+  {\href{https://github.com/neilsahani55/Flowgen}{\faGithub\ Code}}
+\begin{bullets}
+  \item Built a Django 5 content platform with user auth, dashboard and n8n + OpenAI webhook pipelines, generating blogs, landing pages, analyses and reports.
+  \item Added a Jazzmin-branded admin panel, Excel export and a custom theme system with gradient buttons and animated ripple effects.
+\end{bullets}
 
-- Built and shipped a production full-stack React news platform that aggregates and curates content from 50+ global news sources across 12 categories with 217+ code commits
-- Automated 4 staggered scheduled GitHub Actions pipelines that enrich every article with LLM-generated summaries, key talking points, cleaned article previews, and sentiment analysis metadata with resilient multi-provider LLM failover
-- Implemented Google Sign-In authentication via Supabase Auth, per-user cross-device bookmark sync, read-history tracking, personalised Your Special recommendation feed, on-demand translation to 18 languages, and an OSINT reader with entity extraction, Wikipedia enrichment, and investigative external links
-- Added home-editorial layout with live/upcoming/results sports tabs, multi-provider sports aggregation, markets/crypto strip, weather/AQI badges, holidays/festivals widget, today-in-history module, text-to-speech sentence-highlighted reader, and light/dark themes
+\project{Smart Stick for the Blind -- Assistive IoT Device}
+  {Arduino, C++, Ultrasonic Sensors}
+  {\faTrophy\ \textit{Award Winner}}
+\begin{bullets}
+  \item Designed an obstacle-detecting walking stick with real-time audio alerts; presented at Startup Mahakumbh, New Delhi.
+\end{bullets}
+\project{Other Projects}
+  {Python, JavaScript, Next.js}
+  {\href{https://github.com/neilsahani55}{\faGithub\ All Repositories}}
+\begin{bullets}
+  \item \textbf{\href{https://world-of-pdf.vercel.app}{World of PDF}:} Browser-based toolkit delivering \textbf{49 free PDF tools} powered by pdf-lib, PDF.js and Tesseract.js OCR.
+  \item \textbf{\href{https://github.com/neilsahani55/BackLink_Leads}{BackLink Leads}:} Python pipeline that discovers and ranks B2B outreach leads using Common Crawl data.
+\end{bullets}
 
-PromptStudio — Generative AI Prompt and Multi-Model Media SaaS Platform
-Next.js 15.5 App Router, React 19, TypeScript, Google Genkit 1.20 AI Orchestration, Supabase PostgreSQL, TailwindCSS 3.4, shadcn/ui Radix Primitives, Zod Validation, Vercel Blob Storage, Nodemailer SMTP, JWT Sessions (jose), AES-256-GCM Encryption
-Live Demo: https://promptstudios.vercel.app  |  Source Code: https://github.com/neilsahani55/PromptStudio
+%---------- AWARDS ----------
+\section{Awards \& Achievements}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, parsep=0pt, topsep=0pt]
+  \item \textbf{MSSU Tata Startup Award (Winner)} for Smart Stick for the Blind; presented at \textbf{Startup Mahakumbh, New Delhi}.
+  \item \textbf{MHT CET (MCA): 99.59 percentile}, ranking in the top 0.5\% of candidates statewide.
+\end{itemize}
 
-- Launched a TypeScript-first AI SaaS platform that converts blog posts, screenshots, and text content into platform-optimized prompts for Midjourney v6, DALL-E 3, Stable Diffusion, and Flux with semantic text-to-prompt and screenshot UI-to-prompt analysis
-- Enabled the Media Studio to generate a single prompt on up to 4 AI image models in parallel (NVIDIA NIM FLUX.2/FLUX.1, Cloudflare Workers AI FLUX Schnell/SDXL Lightning/DreamShaper, Hugging Face Inference Providers Together/fal) plus Wan 2.2 and HunyuanVideo for video rendering
-- Secured the platform with Google OAuth-only verified-email registration, JWT-signed session cookies with middleware-guarded routes, 10-credit/day free credit system with UTC daily reset and automatic provider-failure refunds, and AES-256-GCM encrypted Bring-Your-Own-Key (BYOK) storage for Hugging Face, NVIDIA, OpenAI, Gemini, DeepSeek, and Ollama keys with live verification
-- Delivered a full admin panel with user management, usage analytics, feedback triage with Nodemailer Gmail SMTP notifications, configurable per-user rate limiting, and a 10-theme automatic CSS-variable recolor engine for logo, avatars, buttons, and admin branding
+%---------- EDUCATION ----------
+\section{Education}
+\entry{Master of Computer Applications (MCA)}{2026 -- 2028 (Pursuing)}
+      {Indira Gandhi National Open University (IGNOU)}{}
+\gap
+\entry{Bachelor of Science in Information Technology (BSc IT)}{2022 -- 2025}
+      {Chetana's H.\ S.\ College, University of Mumbai}{CGPI: 9.42/10}
 
-World of PDF — 49-Tool Client-Side PDF Platform
-HTML5, CSS3, Vanilla JavaScript, Bootstrap 5, Bootstrap Icons, pdf-lib, PDF.js, Tesseract.js OCR, Custom Zero-Dependency Binary Utils (ZIP, BMP, TIFF, DOCX, CSV), Google Fonts Inter
-Live Demo: https://world-of-pdf.vercel.app/  |  Source Code: https://github.com/neilsahani55/world-of-pdf
+%---------- CERTIFICATIONS ----------
+\section{Certifications}
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt, parsep=0pt, topsep=0pt]
+  \item \textbf{AWS:} Knowledge: Compute badge, Cloud Practitioner Essentials, Prompt Engineering, Lambda Foundations, and 17 more Skill Builder courses
+  \item \textbf{Forage \& Others:} Software Engineering (Wells Fargo), Data Analytics (Deloitte), GenAI Data Analytics (Tata), Microsoft 365 Copilot, Power BI (Infosys)
+\end{itemize}
 
-- Shipped 49 free PDF tools across 6 categories — Merge/Organize, Convert-to-PDF, Convert-from-PDF, Edit/Enhance, Security, and Extract/Utility — that run 100% in the browser powered by a shared processing engine and custom hand-written binary file encoders
-- Implemented Tesseract.js on-demand OCR for scanned document text extraction, genuine .docx OOXML packaging for PDF-to-Word, spatial coordinate-based table reconstruction for PDF-to-Excel/CSV, pixel-level TIFF/BMP raster encoders, and permanent unrecoverable text redaction via page rasterization
-
-FlowGen — Django AI Content Generation Platform
-Python 3.10+, Django 5.2.5, Jazzmin Admin Theme, SQLite, Requests, OpenPyXL, n8n Webhooks, OpenAI-Compatible Workflows, HTML Templates, CSS, JavaScript
-Source Code: https://github.com/neilsahani55/Flowgen
-
-- Architected a Django 5 web application with full authentication (register/login/logout/profile), central content dashboard, and a Jazzmin-branded admin themed with Flowgen sky-blue identity
-- Implemented Content Power generator and Blog Generator modules using an asynchronous n8n-OpenAI webhook architecture: Django accepts the user brief, fires an n8n workflow via webhook, stores results by session_id/job_id in cache, and exposes status-polling API endpoints for real-time UI progress
-
-AutoSocial Flow — End-to-End Social Media Automation System
-Python, n8n Workflow Engine, Selenium WebDriver, REST API Integrations, Web Automation, Content Scheduling
-
-- Designed and implemented an end-to-end social media automation system covering content scheduling, trend discovery, and multi-platform cross-posting
-- Built Selenium-based browser automation modules for platforms lacking official APIs and integrated REST API connections for natively supported networks
-
-SalesHub — AI-Powered Financial Due Diligence Engine (FinTech)
-Python, FastAPI, PostgreSQL, LLM Integration, Entity Verification, Risk Assessment
-
-- Developed an AI-driven due diligence engine for automated financial risk assessment and business entity verification workflows
-- Implemented high-performance FastAPI backend with PostgreSQL database for structured storage of financial records and entity profile data
-
-Smart Stick for the Blind — Assistive IoT Mobility Device
-C++, Arduino, Ultrasonic Sensors, Buzzer Audio Feedback, Embedded Systems, Microcontroller Programming
-Award: MSSU Tata Startup Award Winner — Presented at Startup Mahakumbh, New Delhi
-
-- Designed and prototyped an obstacle-detecting walking stick for the visually impaired with real-time ultrasonic obstacle detection and immediate tiered audio feedback alerts
-- Programmed Arduino microcontroller in C++ to process real-time ultrasonic sensor input and trigger appropriate audio alert mechanisms
-- Won the MSSU Tata Startup Award for the project and presented the working prototype at the national Startup Mahakumbh exhibition in New Delhi
-
-Movie App — Native Android Movie Discovery Application
-Java, Android SDK, TMDB REST API, XML UI Layouts, RecyclerView List Rendering
-
-- Developed a native Android movie discovery application using the TMDB REST API with intelligent search, trending movie lists, and detailed movie information views
-- Implemented clean architecture patterns, asynchronous network calls with background threading, and RecyclerView for memory-efficient list rendering
-
-Other Projects and Open Source
-
-BackLink Leads — B2B Outreach Lead Discovery Pipeline
-Python, Common Crawl Data Processing, Lead Ranking, SEO Pipeline Automation
-Source Code: https://github.com/neilsahani55/BackLink_Leads
-
-- Built a Python data pipeline that discovers, filters, and ranks qualified B2B outreach leads by processing Common Crawl web-scale datasets
-
-BlogSmith — AI Prompt Generator with Multi-Step Refinement
-Python, LLM Integration, Prompt Engineering, Quality Scoring, Automated Refinement
-Source Code: https://github.com/neilsahani55/BlogSmith
-
-- Created an AI prompt generator that performs multi-step iterative prompt refinement and automatic quality scoring to deliver high-completeness production-ready prompts
-
-AWARDS AND ACHIEVEMENTS
-
-- MSSU Tata Startup Award (Winner) for Smart Stick for the Blind project; presented the working prototype at Startup Mahakumbh, New Delhi
-- MHT CET (MCA): 99.59 percentile — ranked in the top 0.5% of all candidates across Maharashtra state
-- Letter of Appreciation from Chetana's Self Financing Courses for professionalism during the Summer Internship admissions cycle
-
-EDUCATION
-
-Master of Computer Applications (MCA)
-Indira Gandhi National Open University (IGNOU)
-2026 – 2028 (Pursuing)
-
-Bachelor of Science in Information Technology (BSc — IT)
-Chetana's H. S. College — University of Mumbai
-2022 – 2025  |  CGPI: 9.42 / 10
-
-Higher Secondary Certificate (HSC)
-Thakur Vidya Mandir
-2021 – 2022  |  Percentage: 66.17%
-
-Secondary School Certificate (SSC)
-Holy Angels English High School
-2019 – 2020  |  Percentage: 80.40%
-
-CERTIFICATIONS AND PROFESSIONAL CREDENTIALS
-
-Amazon Web Services (AWS Skill Builder) — 22 Credentials:
-- AWS Knowledge: Compute — Official Training & Certification Badge (July 2026)
-- AWS Cloud Practitioner Essentials
-- Foundations of Prompt Engineering by AWS
-- AWS Lambda Foundations
-- Amazon EC2 Basics
-- Build with Amazon EC2
-- Innovations in Amazon EC2
-- Amazon EC2 Observability, Monitoring, and Troubleshooting
-- Right Size Your Amazon EC2 Workload
-- Introduction to Capacity Manager for Amazon EC2
-- AWS Compute Services Overview
-- AWS Graviton Processors Fundamentals
-- AWS Nitro System Deep Dive
-- AWS AI Chips: Trainium and Inferentia Fundamentals
-- Confidential Computing with AWS Compute
-- Compute Cost Optimization Services
-- AWS Billing and Cost Management
-- AWS Foundations: Getting Started with the AWS Cloud Essentials
-- Compute Knowledge Badge Readiness Path
-- Compute Knowledge Badge Assessment
-- Getting Started with Cloud Acquisition
-- Job Roles in the Cloud
-
-Microsoft 365 Copilot (Microsoft Learn) — 7 Credentials:
-- Get Started with Microsoft 365 Copilot — Learning Path Trophy (June 2026)
-- Introduction to AI Skills for Nonprofits — Learning Path Trophy (June 2026)
-- Introduction to Microsoft 365 Copilot — Module Badge (June 2026)
-- Create and Draft with Microsoft 365 Copilot — Module Badge (June 2026)
-- Explore the Possibilities with Microsoft 365 Copilot — Module Badge (June 2026)
-- Optimize and Extend Microsoft 365 Copilot — Module Badge (June 2026)
-- Microsoft 365 Copilot Full Curriculum Completion
-
-Virtual Job Simulations (Forage):
-- Wells Fargo — Software Engineering Job Simulation (Completed)
-- Deloitte — Data Analytics Job Simulation (Completed)
-- Tata — GenAI Powered Data Analytics (Completed)
-- Tata — Data Visualization Job Simulation (Completed)
-
-Data Analytics, Business Intelligence, and Professional Courses:
-- Generative AI Certification — OutSkill
-- Learning Microsoft Power BI — Infosys Springboard
-- Power BI Skill Course — Skill Course
-- Microsoft Excel 2016 Certification — Infosys Springboard
-- Introduction to UI/UX Design — Infosys Springboard
-- UX and UI Color Theory — Infosys Springboard
+\end{document}
